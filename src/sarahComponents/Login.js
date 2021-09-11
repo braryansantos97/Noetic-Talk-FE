@@ -1,12 +1,15 @@
 import React, {useState, useEffect} from 'react';
 
+///SARAH NOTE: PROPS WILL BE PASSED AS THIS WILL BE SHOWN
+//ON HOME PAGE
+
+
 export default function Login() {
   const [user, setUser] = useState({
     username: '',
     password: ''
   });
   const [loggedInUser, setLoggedInUser] = useState('');
-  //DO I NEED 2 DIFFERENT USER STATES??????
   const [token, setToken] = useState('');
 
 
@@ -52,13 +55,13 @@ export default function Login() {
             <h3>Log in</h3>
             <input
               type="text"
-              name="username"
-              value={user.username}
+              name="email"
+              value={user.email}
               onChange={handleChange}
-              placeholder="username"
-              id="floatingUsername"
+              placeholder="email"
+              id="floatingEmail"
             />
-            <label htmlFor="floatingUsername">Email:</label>
+            <label htmlFor="floatingEmail">Email:</label>
           </div>
 
           <div className="form-floating">
