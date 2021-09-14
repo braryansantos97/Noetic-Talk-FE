@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react';
 
 export default function ShowPost(props) {
   const [post, setPost] = useState({});
-  const [comments, setComments]
+  const [comments, setComments] = useState({});
 
   useEffect(() => {
 		(async () => {
