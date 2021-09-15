@@ -1,20 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+export default function SignUp({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
 
-export default function SignUp() {
-
-	const [token, setToken] = useState('');
-	const [user, setUser] = useState({
-    //NEED THESE KEYS AND VALUES
-		username: '',
-		email: '',
-    confirmemail: '', //IS THIS NECESSARY??? IT'S NOT IN OUR SCHEMA, BUT IT IS ON THE FIGMA
-		password: '',
-    //DATE OF BIRTH ???????
-
-    //VERIFICATION ??????
-	});
-
-	const [loggedInUser, setLoggedInUser] = useState('');
 
   useEffect(() => {
 		if (window.localStorage.getItem('token')) {
@@ -29,7 +16,7 @@ export default function SignUp() {
 
   const handleSignUp = async e => {
 		try {
-			const response = await fetch('/api/signup', {
+			const response = await fetch('https://noetic-talk.herokuapp.com/register', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
@@ -46,6 +33,7 @@ export default function SignUp() {
 		} catch (error) {
 			console.error(error);
 		}
+	}
 
   return (
     <div className="SignUpComponent">
@@ -125,7 +113,7 @@ export default function SignUp() {
            <input
              type="text"
              name="Month"
-             value=
+             value="month"
              onChange={handleChange}
              className="form-control"
              id="floatingMonth"
@@ -136,7 +124,7 @@ export default function SignUp() {
            <input
              type="text"
              name="Day"
-             value=
+             value="day"
              onChange={handleChange}
              className="form-control"
              id="floatingDay"
@@ -147,6 +135,7 @@ export default function SignUp() {
            <input
              type="text"
              name="Year"
+						 value="year"
              onChange={handleChange}
              className="form-control"
              id="floatingYear"
@@ -197,4 +186,5 @@ export default function SignUp() {
       </div>
     </div>
   )
-	};
+
+};

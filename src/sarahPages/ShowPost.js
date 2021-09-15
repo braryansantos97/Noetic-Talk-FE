@@ -3,13 +3,13 @@ import React, {useState, useEffect} from 'react';
 
 export default function ShowPost(props) {
   const [post, setPost] = useState({});
-  const [comments, setComments]
+  const [comments, setComments] = useState({});
 
   useEffect(() => {
 		(async () => {
 			try {
         ///NEED API NAME
-				const response = await fetch(`/api/blogs/${props.match.params.id}`);
+				const response = await fetch(`https://noetic-talk.herokuapp.com/api/blogs/${props.match.params.id}`);
 				const data = await response.json();
 				setPost(data);
 			} catch (error) {
@@ -18,27 +18,27 @@ export default function ShowPost(props) {
 		})();
 	}, []);
 
-  const fetchComment = async () => {
-  		try {
-  			const response = await fetch(`/api/blogs/comments`);
-  			const data = await response.json();
-  			setComments(data);
-  		} catch (error) {
-  			console.error(error);
-  		}
-  	};
+  // const fetchComment = async () => {
+  // 		try {
+  // 			const response = await fetch(`/api/blogs/comments`);
+  // 			const data = await response.json();
+  // 			setComments(data);
+  // 		} catch (error) {
+  // 			console.error(error);
+  // 		}
+  // 	};
 
 //need a handleChange, handleSubmit but JUST for the comments????
 
 const handleSubmit = async e => {
 		e.preventDefault();
 		try {
-			const response = await fetch('/api/blogs', {
+			const response = await fetch('https://noetic-talk.herokuapp.com/api/blogs', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(newListing)
+				body: JSON.stringify(post)
 			});
 			const data = await response.json();
 			setPost([...post, data]);
@@ -66,8 +66,7 @@ const handleChange = e => {
             <p>{post.createdAt}</p>
 						<p>{post.body}</p>
 
-            <CreateComment />
-            //<Comments />
+
 					</>
 
 				) : (
