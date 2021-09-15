@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 
 export default function CreatePost(props) {
 	const [newPost, setNewPost] = useState({
-     topic: '',
+		 username: '',
+		 topic: '',
 	   title: '',
      body: '',
-     createdAt: //some method?
+     comments: ''
 	});
 
   const handleSubmit = async e => {
@@ -14,7 +15,7 @@ export default function CreatePost(props) {
 		e.preventDefault();
 		try {
 
-			const response = await fetch('/api/blogs', {
+			const response = await fetch('https://noetic-talk.herokuapp.com/api/blogs', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'

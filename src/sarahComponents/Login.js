@@ -1,13 +1,7 @@
 import React, {useState, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 
-export default function Login() {
-  const [user, setUser] = useState({
-    username: '',
-    password: ''
-  });
-  const [loggedInUser, setLoggedInUser] = useState('');
-  //DO I NEED 2 DIFFERENT USER STATES??????
-  const [token, setToken] = useState('');
+export default function Login({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
 
 
   useEffect(() => {
@@ -21,7 +15,7 @@ export default function Login() {
   const handleLogin = async e => {
   		e.preventDefault();
   		try {
-  			const response = await fetch('/api/login', {
+  			const response = await fetch('https://noetic-talk.herokuapp.com/api/login', {
   				method: 'POST',
   				headers: {
   					'Content-Type': 'application/json'
@@ -52,14 +46,14 @@ export default function Login() {
             <h3>Log in</h3>
             <input
               type="text"
-              name="username"
-              value={user.username}
+              name="email"
+              value={user.email}
               onChange={handleChange}
               placeholder="username"
               id="floatingUsername"
               className="form-control"
             />
-            <label htmlFor="floatingUsername">Email:</label>
+            <label htmlFor="floatingEmail">Email:</label>
           </div>
 
           <div className="form-floating">
@@ -74,7 +68,7 @@ export default function Login() {
             <label htmlFor="floatingPassword">Password:</label>
           </div>
           <div className="col-auto">
-            <Link to="/forgotpassword" >
+            <Link to="/" >
               Forgot your password?
             </Link>
           </div>
@@ -85,7 +79,7 @@ export default function Login() {
             </button>
           </div>
           <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
-          <p>By continuing, you agree to <Link to="/home">Terms of Use</Link> and <Link to="/home">Privacy Policy</Link>.</p>
+          <p>By continuing, you agree to <Link to="/">Terms of Use</Link> and <Link to="/">Privacy Policy</Link>.</p>
         </form>
       </div>
     </div>

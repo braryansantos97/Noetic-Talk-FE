@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function CreateComment(props) {
   const [comment, setComment] = useState({
-    body: '',
+    message: '',
   });
 
   const handleChange = e => {
@@ -17,7 +17,7 @@ export default function CreateComment(props) {
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(newListing)
+				body: JSON.stringify(comment)
 			});
 			const data = await response.json();
 			props.setComments([...props.comments, data]);
