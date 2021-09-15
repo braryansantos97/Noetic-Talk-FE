@@ -46,9 +46,9 @@ export default function Login() {
   return(
     <div className="LoginComponent">
 
-    <div className="form-div container">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <form onSubmit={handleLogin} >
-          <div >
+          <div class="modal-dialog" role="document">
             <h3>Log in</h3>
             <input
               type="text"
@@ -57,6 +57,7 @@ export default function Login() {
               onChange={handleChange}
               placeholder="username"
               id="floatingUsername"
+              className="form-control"
             />
             <label htmlFor="floatingUsername">Email:</label>
           </div>

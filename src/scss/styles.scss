@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
+
+.SignUpComponent{
+  button {
+    width: 112px;
+    height: 44px;
+    color: white;
+    border-radius: 5px;
+    border: solid 2px ;
+    border-color: #FEC033;
+  }
+  button:hover{
+    color: #FEC033;
+  }
+  div {
+    input[type="text"]{
+      border-radius: 5px;
+      border: solid 2px;
+      border-color: #FEC033;
+    }
+  }
+  div {
+    input[type="checkbox"]{
+      border-color: #FEC033;
+    }
+  }
+  border: solid;
+  border-radius: 8px;
+  text-align: center;
+  h1{
+    font-size: 48px;
+    font-family: 'Nunito', sans-serif;
+    font-weight:bold;
+  }
+}
+
+.LoginComponent{
+
+}
+.CreateComment{
+
+}
