@@ -1,7 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Login from './Login';
+import SignUp from './SignUp';
+import { Link } from 'react-router-dom';
 
 export default function NavBar({user, token}) {
+  //function - onClick component shows up from buttons
+  //reveal function will show the login or register - same as my Registry
 
   return (
     <div className="NavBar">
@@ -47,11 +52,11 @@ export default function NavBar({user, token}) {
 
         <div>
 				    {token ? (
-					         {username}
+					         <p>{user.username}</p>
 				             ) : (
                        <>
-                       <button>Log in</button> {/*questions: 1. how do we make it so onClick it's an overlay and not a separate page?*/}
-                       <button>Sign up </button> {/*questions: 1. how do we make it so onClick it's an overlay and not a separate page?*/}
+                       <Link to="/login">Log in</Link>
+                       <Link to="/signup">Sign up</Link>
                        </>
                      )}
 			  </div>

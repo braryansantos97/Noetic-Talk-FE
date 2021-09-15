@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import NavBar from '../sarahComponents/NavBar';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import routes from './routes';
-import Show from '../sarahPages/ShowPost';
+import ShowPost from '../sarahPages/ShowPost';
 
 
 
@@ -23,21 +23,26 @@ const AppRouter = () => {
 
     return (
   		<Router>
-  			<NavBar routes={routes} />
+  			<NavBar routes={routes} user={user} setUser={setUser}
+        loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}
+        token={token} setToken={setToken}/>
   			<Switch>
   				{routes.map(({ Component, key, path }) => (
   					<Route
   						key={key}
   						path={path}
   						exact
-  						component={() => <Component page={key} />}
+  						component={() => <Component page={key}  user={user} setUser={setUser}
+              loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}
+              token={token} setToken={setToken}/>}
   					></Route>
   				))}
   				<Route
   					path={'/:id'}
-            //Confused about the ShowPost - I need to make sure all of the states
-            //above get to all of the appropriate pages
-  					render={routerProps => <ShowPost {...routerProps} />}
+
+  					render={routerProps => <ShowPost {...routerProps} user={user} setUser={setUser}
+            loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}
+            token={token} setToken={setToken}/>}
   				></Route>
   			</Switch>
   		</Router>

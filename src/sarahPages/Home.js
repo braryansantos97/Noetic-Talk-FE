@@ -4,7 +4,7 @@ import NavBar from '../sarahComponents/NavBar';
 import Login from '../sarahComponents/Login';
 import SignUp from '../sarahComponents/SignUp';
 
-//Do I still need to pass props if the index.js is passing them via routerProps? Is the below correct?
+
 
 export default function Home({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
 
@@ -13,8 +13,8 @@ const [posts, setPosts] = useState([]);
   useEffect(() => {
   		(async () => {
   			try {
-  				const response = await fetch('/api/');
-  				const data = await response.json();
+  				const response = await fetch('https://noetic-talk.herokuapp.com/api/blogs');
+          const data = await response.json();
   				setUser(data);
   			} catch (error) {
   				console.error(error);

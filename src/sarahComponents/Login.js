@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-
+import { Link } from 'react-router-dom';
 
 export default function Login({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
 
@@ -77,7 +77,7 @@ export default function Login({user, setUser, token, setToken, loggedInUser, set
               Log in
             </button>
           </div>
-          <p>Don't have an account? <Link to="/register">Sign up</Link></p>
+          <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
           <p>By continuing, you agree to <Link to="/">Terms of Use</Link> and <Link to="/">Privacy Policy</Link>.</p>
         </form>
       </div>
