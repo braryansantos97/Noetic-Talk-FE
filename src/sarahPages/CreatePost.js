@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function CreatePost(props) {
+export default function CreatePost({user, posts, setPosts}) {
 	const [newPost, setNewPost] = useState({
 		 username: '',
 		 topic: '',
@@ -23,12 +23,12 @@ export default function CreatePost(props) {
 				body: JSON.stringify(newPost)
 			});
 			const data = await response.json();
-			props.setPost([...props.posts, data]);
+			setPosts([...posts, data]);
 			setNewPost({
         topic: '',
         title: '',
         body: '',
-        createdAt: //some method???
+        // createdAt: ''
 			});
 		} catch (error) {
 			console.error(error);
@@ -41,22 +41,21 @@ export default function CreatePost(props) {
 
   return (
   		<div className="CreateComponent container">
-  			<p>
+  			<button>
   				Create a Post
-  			</p>
+  			</button>
   			<div>
   				<form onSubmit={handleSubmit} className="create-form">
-
-          <div className="mb-3 form-floating">
-            <input
-              type="text"
-              id="topic"
-              value={newPost.topic}
-              onChange={handleChange}
-              className="topic-input form-control"
-              name="floatingTopic"
-              placeholder="Topic"
-            />
+          	<div className="mb-3 form-floating">
+            	<input
+	              type="text"
+	              id="topic"
+	              value={newPost.topic}
+	              onChange={handleChange}
+	              className="topic-input form-control"
+	              name="floatingTopic"
+	              placeholder="Topic"
+            	/>
             <label htmlFor="floatingTitle">Topic</label>
           </div>
 
@@ -76,10 +75,10 @@ export default function CreatePost(props) {
   						<input
   							type="text"
   							id="username"
-  							value={props.username}
+  							value={user.username}
   							className="form-control"
   							name="floatingUsername"
-  							placeholder={props.username}
+  							placeholder={user.username}
   						/>
   						<label htmlFor="floatingDescription">User Name</label>
   					</div>

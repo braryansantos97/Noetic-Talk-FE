@@ -3,7 +3,10 @@ import React from 'react';
 import SignUp from '../sarahComponents/SignUp';
 import Login from '../sarahComponents/Login';
 import Home from '../sarahPages/Home';
-
+import About from '../sarahPages/About';
+import CreatePost from '../sarahPages/CreatePost';
+// import Chat from '../sarahPages/Chat';
+// import Resources from '../sarahPages/Resources';
 
 
 const routes = [
@@ -22,7 +25,27 @@ const routes = [
 		Component: SignUp,
 		key: 'SignUp',
 		path: '/signup'
+	},
+	{
+		Component: About,
+		key: 'About',
+		path: '/about'
+	},
+	{
+		Component: CreatePost,
+		key: 'CreatePost',
+		path: '/createpost'
 	}
+	// {
+	// 	Component: Chat,
+	// 	key: 'Chat',
+	// 	path: '/chat'
+	// },
+	// {
+	// 	Component: Resources,
+	// 	key: 'Resources',
+	// 	path: '/resources'
+	// }
 ];
 
 export default routes;

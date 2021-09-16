@@ -3,7 +3,11 @@ import NavBar from '../sarahComponents/NavBar';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import routes from './routes';
 import ShowPost from '../sarahPages/ShowPost';
-
+import Home from '../sarahPages/Home';
+import CreatePost from '../sarahPages/CreatePost';
+import Login from '../sarahComponents/Login';
+import CreateComment from '../sarahComponents/CreateComment';
+import SignUp from '../sarahComponents/SignUp';
 
 
 const AppRouter = () => {
@@ -19,7 +23,7 @@ const AppRouter = () => {
 
 
 
-    //VERIFICATION ??????
+    //VERIFICATION YELLOW AND GREEN ??????
 
     return (
   		<Router>

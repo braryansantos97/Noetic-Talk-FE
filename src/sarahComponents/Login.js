@@ -1,7 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Login({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
+export default function Login(
+  {user,
+  setUser, token, setToken,
+  loggedInUser, setLoggedInUser}
+) {
 
 
   useEffect(() => {

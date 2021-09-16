@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 export default function SignUp({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
 
+
+const monthInput = useRef(null);
+const dayInput = useRef(null);
+const yearInput = useRef(null);
+//before we update, take the value, combine into temp literal, then set DOB to that
 
   useEffect(() => {
 		if (window.localStorage.getItem('token')) {
@@ -15,16 +20,27 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
 	};
 
   const handleSignUp = async e => {
+    e.preventDefault();
+    //set DOB in here
+    const newUser = {
+      username: user.username,
+      email: user.email,
+      password: user.password,
+      DOB: `${monthInput.current.value}/${dayInput.current.value}/${yearInput.current.value}`
+    }
+
 		try {
+
 			const response = await fetch('https://noetic-talk.herokuapp.com/register', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(user)
+				body: JSON.stringify(newUser)
 			});
 			const data = await response.json();
 			console.log(data);
+      console.log('Email', data.user.email);
 			setToken(data.token);
 			setLoggedInUser(data.user.email);
 			window.localStorage.setItem('token', data.token);
@@ -34,6 +50,7 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
 			console.error(error);
 		}
 	}
+  console.log(monthInput, dayInput, yearInput)
 
   return (
     <div className="SignUpComponent">
@@ -90,12 +107,12 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
 
             <div className="mb-3 pl-2 form-floating col-md-6">
               <input
-                type="text"
+                type="password"
                 name="password"
                 value={user.password}
                 onChange={handleChange}
                 className="form-control"
-                id="floatingPasscode"
+                id="floatingPassword"
                 placeholder="Password"
               />
               <label htmlFor="floatingPassword">Password</label>
@@ -112,20 +129,19 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
           Date of Birth:
            <input
              type="text"
+             ref={monthInput}
              name="Month"
-             value="month"
-             onChange={handleChange}
              className="form-control"
              id="floatingMonth"
              placeholder="Month"
+
             />
             <label htmlFor="floatingMonth">Month</label>
 
            <input
              type="text"
+             ref={dayInput}
              name="Day"
-             value="day"
-             onChange={handleChange}
              className="form-control"
              id="floatingDay"
              placeholder="Day"
@@ -134,9 +150,8 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
 
            <input
              type="text"
+             ref={yearInput}
              name="Year"
-						 value="year"
-             onChange={handleChange}
              className="form-control"
              id="floatingYear"
              placeholder="Year"
@@ -158,10 +173,10 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
             <input
               type="text"
               name="Verification"
-              onChange={handleChange}
+            // onChange={handleChange}
               className="form-control"
               id="floatingVerification"
-              placeholder="Varification"
+              placeholder="Verification"
             />
              <label htmlFor="floatingVerification">Verification:</label>
           </div>

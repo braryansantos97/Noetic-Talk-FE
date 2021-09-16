@@ -55,8 +55,8 @@ export default function NavBar({user, token}) {
 					         <p>{user.username}</p>
 				             ) : (
                        <>
-                       <Link to="/login">Log in</Link>
-                       <Link to="/signup">Sign up</Link>
+                       <button><Link to="/login">Log in</Link></button>
+                       <button><Link to="/signup">Sign up</Link></button>
                        </>
                      )}
 			  </div>
