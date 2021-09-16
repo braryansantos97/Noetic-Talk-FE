@@ -4,11 +4,17 @@ import NavBar from '../sarahComponents/NavBar';
 import Login from '../sarahComponents/Login';
 import SignUp from '../sarahComponents/SignUp';
 import CreatePost from './CreatePost'
+import Posts from './Posts'
 
 
 export default function Home({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
 
-const [posts, setPosts] = useState([]);
+const [posts, setPosts] = useState({
+  topic: '',
+  title: '',
+  body: '',
+
+});
 //NEED APIs
   useEffect(() => {
   		(async () => {
@@ -24,10 +30,8 @@ const [posts, setPosts] = useState([]);
 
   return(
     <>
-      <CreatePost user={user}
-      posts={posts}
-      setPosts={setPosts}/>
-
+      <Link to='/createpost'> Create Post </Link>
+      <Posts user={user} posts={posts}/>
     </>
   )
 }

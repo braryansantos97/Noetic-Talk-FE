@@ -2,16 +2,14 @@ import React, { useState } from 'react';
 
 export default function CreatePost({user, posts, setPosts}) {
 	const [newPost, setNewPost] = useState({
-		 username: '',
+
 		 topic: '',
 	   title: '',
      body: '',
-     comments: ''
+
 	});
 
   const handleSubmit = async e => {
-    //Where do I check to make sure the checkbox below was ticked? So they cannot post without
-    //ticking the box.
 		e.preventDefault();
 		try {
 
@@ -28,7 +26,7 @@ export default function CreatePost({user, posts, setPosts}) {
         topic: '',
         title: '',
         body: '',
-        // createdAt: ''
+        
 			});
 		} catch (error) {
 			console.error(error);
@@ -71,17 +69,7 @@ export default function CreatePost({user, posts, setPosts}) {
   						/>
   						<label htmlFor="floatingTitle">Title</label>
   					</div>
-  					<div className="mb-3 form-floating">
-  						<input
-  							type="text"
-  							id="username"
-  							value={user.username}
-  							className="form-control"
-  							name="floatingUsername"
-  							placeholder={user.username}
-  						/>
-  						<label htmlFor="floatingDescription">User Name</label>
-  					</div>
+
   					<div className="mb-3 form-floating">
   						<input
   							type="text"
