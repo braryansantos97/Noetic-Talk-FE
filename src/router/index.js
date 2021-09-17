@@ -20,6 +20,7 @@ const AppRouter = () => {
   });
   const [loggedInUser, setLoggedInUser] = useState('');
   const [token, setToken] = useState('');
+  const [posts, setPosts] = useState([]);
 
 
 
@@ -38,7 +39,7 @@ const AppRouter = () => {
   						exact
   						component={() => <Component page={key}  user={user} setUser={setUser}
               loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}
-              token={token} setToken={setToken}/>}
+              token={token} setToken={setToken} posts={posts} setPosts={setPosts}/>}
   					></Route>
   				))}
   				<Route

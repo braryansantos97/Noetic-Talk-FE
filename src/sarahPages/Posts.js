@@ -1,9 +1,10 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 export default function Posts({user, posts}){
 
   return(
     <div className="posts-container">
+
       {posts && posts.map(post => {
         return (
           <li key={post._id}>
@@ -19,6 +20,7 @@ export default function Posts({user, posts}){
                   <p className="card-author">
                     author: {user.username}
                   </p>
+                  <Link to={`/${post._id}`}>Read full post</Link>
               </div>
             </div>
           </li>

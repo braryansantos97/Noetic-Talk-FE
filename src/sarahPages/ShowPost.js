@@ -1,8 +1,14 @@
 import React, {useState, useEffect} from 'react';
 
 
-export default function ShowPost({user}) {
-  const [post, setPost] = useState({});
+export default function ShowPost(props) {
+  const [post, setPost] = useState({
+    title: '',
+    username: '',
+    body: '',
+    createdAt: '',
+    comments: ''
+  });
   const [comments, setComments] = useState({});
 
   useEffect(() => {

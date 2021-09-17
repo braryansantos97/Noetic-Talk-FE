@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 export default function CreatePost({user, posts, setPosts}) {
 	const [newPost, setNewPost] = useState({
-
 		 topic: '',
 	   title: '',
      body: '',
@@ -12,7 +11,6 @@ export default function CreatePost({user, posts, setPosts}) {
   const handleSubmit = async e => {
 		e.preventDefault();
 		try {
-
 			const response = await fetch('https://noetic-talk.herokuapp.com/api/blogs', {
 				method: 'POST',
 				headers: {
@@ -26,7 +24,6 @@ export default function CreatePost({user, posts, setPosts}) {
         topic: '',
         title: '',
         body: '',
-        
 			});
 		} catch (error) {
 			console.error(error);

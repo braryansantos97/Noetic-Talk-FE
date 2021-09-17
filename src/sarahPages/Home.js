@@ -7,14 +7,9 @@ import CreatePost from './CreatePost'
 import Posts from './Posts'
 
 
-export default function Home({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
+export default function Home({user, setUser, token, setToken, loggedInUser, setLoggedInUser, posts, setPosts}) {
 
-const [posts, setPosts] = useState({
-  topic: '',
-  title: '',
-  body: '',
 
-});
 //NEED APIs
   useEffect(() => {
   		(async () => {

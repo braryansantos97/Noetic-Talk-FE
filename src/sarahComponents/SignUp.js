@@ -39,8 +39,7 @@ const yearInput = useRef(null);
 				body: JSON.stringify(newUser)
 			});
 			const data = await response.json();
-			console.log(data);
-      console.log('Email', data.user.email);
+
 			setToken(data.token);
 			setLoggedInUser(data.user.email);
 			window.localStorage.setItem('token', data.token);
@@ -50,7 +49,7 @@ const yearInput = useRef(null);
 			console.error(error);
 		}
 	}
-  console.log(monthInput, dayInput, yearInput)
+  
 
   return (
     <div className="SignUpComponent">
