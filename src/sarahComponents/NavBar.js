@@ -3,10 +3,24 @@ import { NavLink } from 'react-router-dom';
 import Login from './Login';
 import SignUp from './SignUp';
 import { Link } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
-export default function NavBar({user, token}) {
+
+export default function NavBar({user, token, setToken, loggedInUser, setLoggedInUser}) {
   //function - onClick component shows up from buttons
   //reveal function will show the login or register - same as my Registry
+
+
+
+let history = useHistory();
+
+const logout = () => {
+  console.log('logging out');
+  localStorage.clear();
+  setToken('')
+  history.push('/');
+
+}
 
   return (
     <div className="NavBar">
@@ -52,7 +66,10 @@ export default function NavBar({user, token}) {
 
         <div>
 				    {token ? (
-					         <p>{user.username}</p>
+              <>
+					         <p>{loggedInUser}</p>
+                   <button onClick={logout}>Log out</button>
+              </>
 				             ) : (
                        <>
                        <button><Link to="/login">Log in</Link></button>

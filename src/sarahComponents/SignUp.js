@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import  { Link } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 export default function SignUp({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
 
-
+let history = useHistory();
 const monthInput = useRef(null);
 const dayInput = useRef(null);
 const yearInput = useRef(null);
@@ -21,7 +22,7 @@ const yearInput = useRef(null);
 
   const handleSignUp = async e => {
     e.preventDefault();
-    //set DOB in here
+
     const newUser = {
       username: user.username,
       email: user.email,
@@ -41,15 +42,17 @@ const yearInput = useRef(null);
 			const data = await response.json();
 
 			setToken(data.token);
-			setLoggedInUser(data.user.email);
+			setLoggedInUser(data.user.username);
 			window.localStorage.setItem('token', data.token);
-			window.localStorage.setItem('loggedInUser', data.user.email);
+			window.localStorage.setItem('loggedInUser', data.user.username);
+      history.push('/');
 			//for the local storage so they don't have to log in every time it refreshes
 		} catch (error) {
 			console.error(error);
+
 		}
 	}
-  
+
 
   return (
     <div className="SignUpComponent">
@@ -57,25 +60,27 @@ const yearInput = useRef(null);
         <h1 className="h3 mb-3 fw-normal">Sign Up</h1>
 
         <div className="mb-3 form-floating row">
+        <div className="mb-3 pl-2  form-floating col-md-6">
+          <input
+            type="text"
+            name="username"
+            value={user.username}
+            onChange={handleChange}
+            className=""
+            id="floatingUsername"
+            placeholder="Username"
+          />
+          <label htmlFor="floatingUsername">Username:</label>
+          <div>
+            <span>This is the name that will be shown in your messages. Please
+            protect your privacy! Do not use your own name or a username that
+            you use on other forums or social media.</span>
+          </div>
+        <p>----- or -----</p>
+        </div>
           <form className="signup-form row">
-            <div className="mb-3 pl-2  form-floating col-md-6">
-              <input
-                type="text"
-                name="username"
-                value={user.username}
-                onChange={handleChange}
-                className="form-control"
-                id="floatingUsername"
-                placeholder="Username"
-              />
-              <label htmlFor="floatingFirstName">Username:</label>
-            </div>
-              <div>
-                <span>This is the name that will be shown in your messages. Please
-                protect your privacy! Do not use your own name or a username that
-                you use on other forums or social media.</span>
-              </div>
-            <p>----- or -----</p>
+
+
             <button>Randomly Generate</button>
 
             <div className="mb-3 pl-2 form-floating col-md-6">
@@ -98,7 +103,6 @@ const yearInput = useRef(null);
                 value={user.email}
                 onChange={handleChange}
                 className="form-control"
-                id="floatingEmail"
                 placeholder="Email"
               />
               <label htmlFor="floatingEmail">Confirm Email:</label>

@@ -25,6 +25,7 @@ export default function CreatePost({user, posts, setPosts}) {
         title: '',
         body: '',
 			});
+			window.location.assign(`https://noetic-talk.herokuapp.com/api/blogs/${posts.match.params.id}`)
 		} catch (error) {
 			console.error(error);
 		}
