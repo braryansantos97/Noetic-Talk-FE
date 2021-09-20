@@ -1,12 +1,18 @@
 import React, { useState } from 'react';
+import {useHistory} from 'react-router-dom';
 
-export default function CreatePost({user, posts, setPosts}) {
+export default function CreatePost({user, posts, setPosts, match}) {
 	const [newPost, setNewPost] = useState({
+		 username: '',
 		 topic: '',
 	   title: '',
      body: '',
 
 	});
+
+
+
+	let history = useHistory();
 
   const handleSubmit = async e => {
 		e.preventDefault();
@@ -21,11 +27,13 @@ export default function CreatePost({user, posts, setPosts}) {
 			const data = await response.json();
 			setPosts([...posts, data]);
 			setNewPost({
+				username: '',
         topic: '',
         title: '',
         body: '',
 			});
-			window.location.assign(`https://noetic-talk.herokuapp.com/api/blogs/${posts.match.params.id}`)
+			console.log(data._id)
+			history.push(`/${data._id}`)
 		} catch (error) {
 			console.error(error);
 		}
@@ -37,9 +45,7 @@ export default function CreatePost({user, posts, setPosts}) {
 
   return (
   		<div className="CreateComponent container">
-  			<button>
-  				Create a Post
-  			</button>
+
   			<div>
   				<form onSubmit={handleSubmit} className="create-form">
           	<div className="mb-3 form-floating">
@@ -66,6 +72,17 @@ export default function CreatePost({user, posts, setPosts}) {
   							placeholder="Title"
   						/>
   						<label htmlFor="floatingTitle">Title</label>
+  					</div>
+
+						<div className="mb-3 form-floating">
+  						<input
+  							type="text"
+  							id="author"
+  							defaultValue={user.username}
+  							placeholder="Author"
+								name="floatingAuthor"
+  						/>
+  						<label htmlFor="floatingAuthor">Title</label>
   					</div>
 
   					<div className="mb-3 form-floating">

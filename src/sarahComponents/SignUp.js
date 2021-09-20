@@ -7,6 +7,7 @@ let history = useHistory();
 const monthInput = useRef(null);
 const dayInput = useRef(null);
 const yearInput = useRef(null);
+const [superman, setSuperman] = useState({...user});
 //before we update, take the value, combine into temp literal, then set DOB to that
 
   useEffect(() => {
@@ -17,18 +18,19 @@ const yearInput = useRef(null);
 	}, []);
 
   const handleChange = e => {
-		setUser({ ...user, [e.target.name]: e.target.value });
+		setSuperman({ ...superman, [e.target.name]: e.target.value });
 	};
 
   const handleSignUp = async e => {
     e.preventDefault();
 
     const newUser = {
-      username: user.username,
-      email: user.email,
-      password: user.password,
+      username: superman.username,
+      email: superman.email,
+      password: superman.password,
       DOB: `${monthInput.current.value}/${dayInput.current.value}/${yearInput.current.value}`
     }
+    setUser(superman)
 
 		try {
 
@@ -45,6 +47,7 @@ const yearInput = useRef(null);
 			setLoggedInUser(data.user.username);
 			window.localStorage.setItem('token', data.token);
 			window.localStorage.setItem('loggedInUser', data.user.username);
+      
       history.push('/');
 			//for the local storage so they don't have to log in every time it refreshes
 		} catch (error) {
@@ -64,7 +67,7 @@ const yearInput = useRef(null);
           <input
             type="text"
             name="username"
-            value={user.username}
+            value={superman.username}
             onChange={handleChange}
             className=""
             id="floatingUsername"
@@ -77,17 +80,18 @@ const yearInput = useRef(null);
             you use on other forums or social media.</span>
           </div>
         <p>----- or -----</p>
+
+        <button>Randomly Generate</button>
         </div>
-          <form className="signup-form row">
 
 
-            <button>Randomly Generate</button>
+          <form className="signup-form row" onSubmit={handleSignUp}>
 
             <div className="mb-3 pl-2 form-floating col-md-6">
               <input
                 type="text"
                 name="email"
-                value={user.email}
+                value={superman.email}
                 onChange={handleChange}
                 className="form-control"
                 id="floatingEmail"
@@ -100,7 +104,7 @@ const yearInput = useRef(null);
               <input
                 type="text"
                 name="email"
-                value={user.email}
+                value={superman.email}
                 onChange={handleChange}
                 className="form-control"
                 placeholder="Email"
@@ -112,7 +116,7 @@ const yearInput = useRef(null);
               <input
                 type="password"
                 name="password"
-                value={user.password}
+                value={superman.password}
                 onChange={handleChange}
                 className="form-control"
                 id="floatingPassword"
@@ -196,7 +200,7 @@ const yearInput = useRef(null);
             type="submit"
             value="Register"
             className="btn btn-success mb-3"
-            onClick={handleSignUp}
+
           >
             Sign Up
           </button>

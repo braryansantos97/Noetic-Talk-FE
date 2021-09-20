@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
 
@@ -7,7 +7,7 @@ export default function Login(
   setUser, token, setToken,
   loggedInUser, setLoggedInUser}
 ) {
-
+const [superwoman, setSuperwoman] = useState({...user})
 const history = useHistory();
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const history = useHistory();
   	};
 
   	const handleChange = e => {
-  		setUser({ ...user, [e.target.name]: e.target.value });
+  		setSuperwoman({ ...superwoman, [e.target.name]: e.target.value });
   	};
 
 
@@ -54,7 +54,7 @@ const history = useHistory();
             <input
               type="text"
               name="email"
-              value={user.email}
+              value={superwoman.email}
               onChange={handleChange}
               placeholder="username"
               id="floatingUsername"
@@ -67,7 +67,7 @@ const history = useHistory();
             <input
               type="text"
               name="password"
-              value={user.password}
+              value={superwoman.password}
               onChange={handleChange}
               placeholder="Password"
               id="floatingPassword"

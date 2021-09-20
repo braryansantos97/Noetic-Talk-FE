@@ -35,6 +35,11 @@ const routes = [
 		Component: CreatePost,
 		key: 'CreatePost',
 		path: '/createpost'
+	},
+	{
+		Component: CreateComment,
+		key: 'CreateComment',
+		path: '/createcomment'
 	}
 	// {
 	// 	Component: Chat,
