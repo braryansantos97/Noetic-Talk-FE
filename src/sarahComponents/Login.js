@@ -1,8 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 
-export default function Login({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
-
+export default function Login(
+  {user,
+  setUser, token, setToken,
+  loggedInUser, setLoggedInUser}
+) {
+const [superwoman, setSuperwoman] = useState({...user})
+const history = useHistory();
 
   useEffect(() => {
 		if (window.localStorage.getItem('token')) {
@@ -15,7 +21,7 @@ export default function Login({user, setUser, token, setToken, loggedInUser, set
   const handleLogin = async e => {
   		e.preventDefault();
   		try {
-  			const response = await fetch('https://noetic-talk.herokuapp.com/api/login', {
+  			const response = await fetch('https://noetic-talk.herokuapp.com/login', {
   				method: 'POST',
   				headers: {
   					'Content-Type': 'application/json'
@@ -27,27 +33,28 @@ export default function Login({user, setUser, token, setToken, loggedInUser, set
   			setLoggedInUser(data.user.username);
   			window.localStorage.setItem('token', data.token);
   			window.localStorage.setItem('loggedInUser', data.user.username);
+        history.push('/');
   		} catch (error) {
   			console.error(error);
   		}
   	};
 
   	const handleChange = e => {
-  		setUser({ ...user, [e.target.name]: e.target.value });
+  		setSuperwoman({ ...superwoman, [e.target.name]: e.target.value });
   	};
 
 
   return(
     <div className="LoginComponent">
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <form onSubmit={handleLogin} >
-          <div class="modal-dialog" role="document">
+          <div className="modal-dialog" role="document">
             <h3>Log in</h3>
             <input
               type="text"
               name="email"
-              value={user.email}
+              value={superwoman.email}
               onChange={handleChange}
               placeholder="username"
               id="floatingUsername"
@@ -60,7 +67,7 @@ export default function Login({user, setUser, token, setToken, loggedInUser, set
             <input
               type="text"
               name="password"
-              value={user.password}
+              value={superwoman.password}
               onChange={handleChange}
               placeholder="Password"
               id="floatingPassword"

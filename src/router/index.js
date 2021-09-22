@@ -3,7 +3,11 @@ import NavBar from '../sarahComponents/NavBar';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import routes from './routes';
 import ShowPost from '../sarahPages/ShowPost';
-
+import Home from '../sarahPages/Home';
+import CreatePost from '../sarahPages/CreatePost';
+import Login from '../sarahComponents/Login';
+import CreateComment from '../sarahComponents/CreateComment';
+import SignUp from '../sarahComponents/SignUp';
 
 
 const AppRouter = () => {
@@ -16,10 +20,11 @@ const AppRouter = () => {
   });
   const [loggedInUser, setLoggedInUser] = useState('');
   const [token, setToken] = useState('');
+  const [posts, setPosts] = useState([]);
 
+  
 
-
-    //VERIFICATION ??????
+    //VERIFICATION YELLOW AND GREEN ??????
 
     return (
   		<Router>
@@ -32,9 +37,9 @@ const AppRouter = () => {
   						key={key}
   						path={path}
   						exact
-  						component={() => <Component page={key}  user={user} setUser={setUser}
+  						component={(routerProps) => <Component {...routerProps} page={key}  user={user} setUser={setUser}
               loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}
-              token={token} setToken={setToken}/>}
+              token={token} setToken={setToken} posts={posts} setPosts={setPosts}/>}
   					></Route>
   				))}
   				<Route

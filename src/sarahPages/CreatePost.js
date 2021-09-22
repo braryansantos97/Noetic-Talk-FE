@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
+import {useHistory} from 'react-router-dom';
 
-export default function CreatePost(props) {
+export default function CreatePost({user, posts, setPosts, match}) {
 	const [newPost, setNewPost] = useState({
 		 username: '',
 		 topic: '',
 	   title: '',
      body: '',
-     comments: ''
+
 	});
 
+
+
+	let history = useHistory();
+
   const handleSubmit = async e => {
-    //Where do I check to make sure the checkbox below was ticked? So they cannot post without
-    //ticking the box.
 		e.preventDefault();
 		try {
-
 			const response = await fetch('https://noetic-talk.herokuapp.com/api/blogs', {
 				method: 'POST',
 				headers: {
@@ -23,13 +25,15 @@ export default function CreatePost(props) {
 				body: JSON.stringify(newPost)
 			});
 			const data = await response.json();
-			props.setPost([...props.posts, data]);
+			setPosts([...posts, data]);
 			setNewPost({
+				username: '',
         topic: '',
         title: '',
         body: '',
-        createdAt: //some method???
 			});
+			console.log(data._id)
+			history.push(`/${data._id}`)
 		} catch (error) {
 			console.error(error);
 		}
@@ -41,22 +45,19 @@ export default function CreatePost(props) {
 
   return (
   		<div className="CreateComponent container">
-  			<p>
-  				Create a Post
-  			</p>
+
   			<div>
   				<form onSubmit={handleSubmit} className="create-form">
-
-          <div className="mb-3 form-floating">
-            <input
-              type="text"
-              id="topic"
-              value={newPost.topic}
-              onChange={handleChange}
-              className="topic-input form-control"
-              name="floatingTopic"
-              placeholder="Topic"
-            />
+          	<div className="mb-3 form-floating">
+            	<input
+	              type="text"
+	              id="topic"
+	              value={newPost.topic}
+	              onChange={handleChange}
+	              className="topic-input form-control"
+	              name="floatingTopic"
+	              placeholder="Topic"
+            	/>
             <label htmlFor="floatingTitle">Topic</label>
           </div>
 
@@ -72,17 +73,18 @@ export default function CreatePost(props) {
   						/>
   						<label htmlFor="floatingTitle">Title</label>
   					</div>
-  					<div className="mb-3 form-floating">
+
+						<div className="mb-3 form-floating">
   						<input
   							type="text"
-  							id="username"
-  							value={props.username}
-  							className="form-control"
-  							name="floatingUsername"
-  							placeholder={props.username}
+  							id="author"
+  							defaultValue={user.username}
+  							placeholder="Author"
+								name="floatingAuthor"
   						/>
-  						<label htmlFor="floatingDescription">User Name</label>
+  						<label htmlFor="floatingAuthor">Title</label>
   					</div>
+
   					<div className="mb-3 form-floating">
   						<input
   							type="text"
