@@ -22,12 +22,13 @@ const AppRouter = () => {
   const [token, setToken] = useState('');
   const [posts, setPosts] = useState([]);
 
-  
+
 
     //VERIFICATION YELLOW AND GREEN ??????
 
     return (
   		<Router>
+
   			<NavBar routes={routes} user={user} setUser={setUser}
         loggedInUser={loggedInUser} setLoggedInUser={setLoggedInUser}
         token={token} setToken={setToken}/>

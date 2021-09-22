@@ -26,7 +26,7 @@ const history = useHistory();
   				headers: {
   					'Content-Type': 'application/json'
   				},
-  				body: JSON.stringify(user)
+  				body: JSON.stringify(superwoman)
   			});
   			const data = await response.json();
   			setToken(data.token);

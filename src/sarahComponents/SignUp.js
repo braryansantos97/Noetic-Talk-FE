@@ -47,9 +47,10 @@ const [superman, setSuperman] = useState({...user});
 			setLoggedInUser(data.user.username);
 			window.localStorage.setItem('token', data.token);
 			window.localStorage.setItem('loggedInUser', data.user.username);
-      
+      console.log(data)
       history.push('/');
 			//for the local storage so they don't have to log in every time it refreshes
+      console.log('hi')
 		} catch (error) {
 			console.error(error);
 
@@ -192,10 +193,6 @@ const [superman, setSuperman] = useState({...user});
             <span>*Required Information</span>
           </div>
           <p>By continuing, you agree to <Link to="/home">Terms of Use</Link> and <Link to="/home">Privacy Policy</Link>.</p>
-          </form>
-        </div>
-
-        <div className="mb-3">
           <button
             type="submit"
             value="Register"
@@ -204,9 +201,12 @@ const [superman, setSuperman] = useState({...user});
           >
             Sign Up
           </button>
+          </form>
+        </div>
+
         </div>
       </div>
-    </div>
+  
   )
 
 };

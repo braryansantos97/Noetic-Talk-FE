@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-export default function Posts({user, posts}){
+export default function Posts({user, posts, loggedInUser}){
 
   return(
     <div className="posts-container">
@@ -18,7 +18,7 @@ export default function Posts({user, posts}){
                     {post.body}
                   </p>
                   <p className="card-author">
-                    author: {user.username}
+                    author: {post.username}
                   </p>
                   <Link to={`/${post._id}`}>Read full post</Link>
               </div>

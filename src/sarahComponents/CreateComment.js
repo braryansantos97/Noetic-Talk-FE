@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
-export default function CreateComment({user}) {
+export default function CreateComment({user, comments, setComments, loggedInUser}) {
   const [comment, setComment] = useState({
     message: '',
   });
+  // const [newComment, setNewComment] = useState({
+  //   name: `${loggedInUser}`,
+  //   message:
+  // })
 
   const handleChange = e => {
 		setComment({...comment, [e.target.id]: e.target.value });
