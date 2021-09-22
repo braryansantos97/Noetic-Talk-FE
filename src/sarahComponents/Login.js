@@ -40,9 +40,9 @@ export default function Login({user, setUser, token, setToken, loggedInUser, set
   return(
     <div className="LoginComponent">
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <form onSubmit={handleLogin} >
-          <div class="modal-dialog" role="document">
+          <div className="modal-dialog" role="document">
             <h3>Log in</h3>
             <input
               type="text"

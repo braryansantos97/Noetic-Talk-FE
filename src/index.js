@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './scss/styles.css'
 
 import AppRouter from './router';
+import 'bootstrap/scss/bootstrap.scss';
+
 
 
 ReactDOM.render(

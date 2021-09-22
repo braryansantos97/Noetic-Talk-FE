@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import {BsArrowRepeat} from "react-icons/bs";
 export default function SignUp({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
 
 
@@ -60,7 +61,7 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
                 you use on other forums or social media.</span>
               </div>
             <p>----- or -----</p>
-            <button>Randomly Generate</button>
+            <button type="button" >Randomly Generate<BsArrowRepeat/></button>
 
             <div className="mb-3 pl-2 form-floating col-md-6">
               <input
@@ -144,8 +145,8 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
            <label htmlFor="floatingYear">Year</label>
           </div>
 
-          <div>
-          <input
+          <div className="form-group">
+          <input className="form-check-input"
             type="checkbox"
           />
           <span>I confirm, the above username isn't my real name and I don't
@@ -177,7 +178,7 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
           <button
             type="submit"
             value="Register"
-            className="btn btn-success mb-3"
+            className="btn btn-warning"
             onClick={handleSignUp}
           >
             Sign Up
