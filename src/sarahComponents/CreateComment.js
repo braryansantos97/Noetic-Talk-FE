@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function CreateComment(props) {
+export default function CreateComment({user}) {
   const [comment, setComment] = useState({
     message: '',
   });
@@ -20,9 +20,9 @@ export default function CreateComment(props) {
 				body: JSON.stringify(comment)
 			});
 			const data = await response.json();
-			props.setComments([...props.comments, data]);
+			setComments([...comments, data]);
 			setComment({
-				body: '',
+				message: '',
 			});
 		} catch (error) {
 			console.error(error);

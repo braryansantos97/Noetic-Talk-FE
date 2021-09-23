@@ -3,19 +3,21 @@ import { Link } from 'react-router-dom';
 import NavBar from '../sarahComponents/NavBar';
 import Login from '../sarahComponents/Login';
 import SignUp from '../sarahComponents/SignUp';
+import CreatePost from './CreatePost'
+import Posts from './Posts'
 
 
 
-export default function Home({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
+export default function Home({user, setUser, token, setToken, loggedInUser, setLoggedInUser, posts, setPosts}) {
 
-const [posts, setPosts] = useState([]);
+
 //NEED APIs
   useEffect(() => {
   		(async () => {
   			try {
   				const response = await fetch('https://noetic-talk.herokuapp.com/api/blogs');
           const data = await response.json();
-  				setUser(data);
+  				setPosts(data);
   			} catch (error) {
   				console.error(error);
   			}
@@ -24,22 +26,8 @@ const [posts, setPosts] = useState([]);
 
   return(
     <>
-      <Login
-      user={user}
-      setUser={setUser}
-      token={token}
-      setToken={setToken}
-      loggedInUser={loggedInUser}
-      setLoggedInUser={setLoggedInUser}
-      />
-
-      <SignUp user={user}
-      setUser={setUser}
-      token={token}
-      setToken={setToken}
-      loggedInUser={loggedInUser}
-      setLoggedInUser={setLoggedInUser}
-      />
+      <Link to='/createpost'> Create Post </Link>
+      <Posts user={user} posts={posts}/>
     </>
   )
 }

@@ -1,8 +1,20 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {BsArrowRepeat} from "react-icons/bs";
+=======
+import React, { useState, useEffect, useRef } from 'react';
+import  { Link } from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
+>>>>>>> 666866e7ed9b0abdfe550c41a4c29d175ab36b61
 export default function SignUp({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
 
+let history = useHistory();
+const monthInput = useRef(null);
+const dayInput = useRef(null);
+const yearInput = useRef(null);
+const [superman, setSuperman] = useState({...user});
+//before we update, take the value, combine into temp literal, then set DOB to that
 
   useEffect(() => {
 		if (window.localStorage.getItem('token')) {
@@ -12,29 +24,44 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
 	}, []);
 
   const handleChange = e => {
-		setUser({ ...user, [e.target.name]: e.target.value });
+		setSuperman({ ...superman, [e.target.name]: e.target.value });
 	};
 
   const handleSignUp = async e => {
+    e.preventDefault();
+
+    const newUser = {
+      username: superman.username,
+      email: superman.email,
+      password: superman.password,
+      DOB: `${monthInput.current.value}/${dayInput.current.value}/${yearInput.current.value}`
+    }
+    setUser(superman)
+
 		try {
+
 			const response = await fetch('https://noetic-talk.herokuapp.com/register', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(user)
+				body: JSON.stringify(newUser)
 			});
 			const data = await response.json();
-			console.log(data);
+
 			setToken(data.token);
-			setLoggedInUser(data.user.email);
+			setLoggedInUser(data.user.username);
 			window.localStorage.setItem('token', data.token);
-			window.localStorage.setItem('loggedInUser', data.user.email);
+			window.localStorage.setItem('loggedInUser', data.user.username);
+      
+      history.push('/');
 			//for the local storage so they don't have to log in every time it refreshes
 		} catch (error) {
 			console.error(error);
+
 		}
 	}
+
 
   return (
     <div className="SignUpComponent">
@@ -42,6 +69,7 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
         <h1 className="h3 mb-3 fw-normal">Sign Up</h1>
 
         <div className="mb-3 form-floating row">
+<<<<<<< HEAD
           <form className="signup-form row">
             <div className="mb-3 pl-2  form-floating col-md-6">
               <input
@@ -62,12 +90,37 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
               </div>
             <p>----- or -----</p>
             <button type="button" >Randomly Generate<BsArrowRepeat/></button>
+=======
+        <div className="mb-3 pl-2  form-floating col-md-6">
+          <input
+            type="text"
+            name="username"
+            value={superman.username}
+            onChange={handleChange}
+            className=""
+            id="floatingUsername"
+            placeholder="Username"
+          />
+          <label htmlFor="floatingUsername">Username:</label>
+          <div>
+            <span>This is the name that will be shown in your messages. Please
+            protect your privacy! Do not use your own name or a username that
+            you use on other forums or social media.</span>
+          </div>
+        <p>----- or -----</p>
+
+        <button>Randomly Generate</button>
+        </div>
+
+
+          <form className="signup-form row" onSubmit={handleSignUp}>
+>>>>>>> 666866e7ed9b0abdfe550c41a4c29d175ab36b61
 
             <div className="mb-3 pl-2 form-floating col-md-6">
               <input
                 type="text"
                 name="email"
-                value={user.email}
+                value={superman.email}
                 onChange={handleChange}
                 className="form-control"
                 id="floatingEmail"
@@ -80,10 +133,9 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
               <input
                 type="text"
                 name="email"
-                value={user.email}
+                value={superman.email}
                 onChange={handleChange}
                 className="form-control"
-                id="floatingEmail"
                 placeholder="Email"
               />
               <label htmlFor="floatingEmail">Confirm Email:</label>
@@ -91,12 +143,12 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
 
             <div className="mb-3 pl-2 form-floating col-md-6">
               <input
-                type="text"
+                type="password"
                 name="password"
-                value={user.password}
+                value={superman.password}
                 onChange={handleChange}
                 className="form-control"
-                id="floatingPasscode"
+                id="floatingPassword"
                 placeholder="Password"
               />
               <label htmlFor="floatingPassword">Password</label>
@@ -113,20 +165,19 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
           Date of Birth:
            <input
              type="text"
+             ref={monthInput}
              name="Month"
-             value="month"
-             onChange={handleChange}
              className="form-control"
              id="floatingMonth"
              placeholder="Month"
+
             />
             <label htmlFor="floatingMonth">Month</label>
 
            <input
              type="text"
+             ref={dayInput}
              name="Day"
-             value="day"
-             onChange={handleChange}
              className="form-control"
              id="floatingDay"
              placeholder="Day"
@@ -135,9 +186,8 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
 
            <input
              type="text"
+             ref={yearInput}
              name="Year"
-						 value="year"
-             onChange={handleChange}
              className="form-control"
              id="floatingYear"
              placeholder="Year"
@@ -159,10 +209,10 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
             <input
               type="text"
               name="Verification"
-              onChange={handleChange}
+            // onChange={handleChange}
               className="form-control"
               id="floatingVerification"
-              placeholder="Varification"
+              placeholder="Verification"
             />
              <label htmlFor="floatingVerification">Verification:</label>
           </div>
@@ -178,8 +228,13 @@ export default function SignUp({user, setUser, token, setToken, loggedInUser, se
           <button
             type="submit"
             value="Register"
+<<<<<<< HEAD
             className="btn btn-warning"
             onClick={handleSignUp}
+=======
+            className="btn btn-success mb-3"
+
+>>>>>>> 666866e7ed9b0abdfe550c41a4c29d175ab36b61
           >
             Sign Up
           </button>
