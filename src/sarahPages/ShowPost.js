@@ -3,7 +3,7 @@ import Comments from '../sarahComponents/Comments';
 import CreateComment from '../sarahComponents/CreateComment';
 import {Link} from 'react-router-dom';
 
-export default function ShowPost({user, match}) {
+export default function ShowPost({user, match, comment, setComment, loggedInUser}) {
   const [post, setPost] = useState({
     title: '',
     username: '',
@@ -12,6 +12,7 @@ export default function ShowPost({user, match}) {
     comments: ''
   });
   const [comments, setComments] = useState([]);
+  
 
   useEffect(() => {
 		(async () => {
@@ -26,9 +27,13 @@ export default function ShowPost({user, match}) {
 		})();
 	}, []);
 
+  useEffect(() => {
+		console.log("UseEffect", loggedInUser)
+	}, [loggedInUser]);
 
   // <Link to="/createcomment">Create Comment</Link>
   // <Comments user={user}/>
+  // <CreateComment />
 
   return(
     <div className="PostPage container">
@@ -38,7 +43,9 @@ export default function ShowPost({user, match}) {
             <h4>{post.username}</h4>
             <p>{post.createdAt}</p>
 						<p>{post.body}</p>
-            
+            <CreateComment user={user} match={match} comment={comment} setComment={setComment} loggedInUser={loggedInUser} comments={comments} setComments={setComments}/>
+            <Comments user={user} comments={comments} loggedInUser={loggedInUser} setComments={setComments}/>
+
 					</>
 
 				) : (
