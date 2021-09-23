@@ -1,12 +1,9 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from 'react';
+
 import { Link } from 'react-router-dom';
 import {BsArrowRepeat} from "react-icons/bs";
-=======
 import React, { useState, useEffect, useRef } from 'react';
-import  { Link } from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
->>>>>>> 666866e7ed9b0abdfe550c41a4c29d175ab36b61
+
 export default function SignUp({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
 
 let history = useHistory();
@@ -39,7 +36,6 @@ const [superman, setSuperman] = useState({...user});
     setUser(superman)
 
 		try {
-
 			const response = await fetch('https://noetic-talk.herokuapp.com/register', {
 				method: 'POST',
 				headers: {
@@ -48,34 +44,29 @@ const [superman, setSuperman] = useState({...user});
 				body: JSON.stringify(newUser)
 			});
 			const data = await response.json();
-
 			setToken(data.token);
 			setLoggedInUser(data.user.username);
 			window.localStorage.setItem('token', data.token);
 			window.localStorage.setItem('loggedInUser', data.user.username);
-      
       history.push('/');
 			//for the local storage so they don't have to log in every time it refreshes
 		} catch (error) {
 			console.error(error);
-
 		}
 	}
 
 
   return (
     <div className="SignUpComponent">
-    <div className="form-div form-floating mb-3 container">
+      <div className="form-div form-floating mb-3 container">
         <h1 className="h3 mb-3 fw-normal">Sign Up</h1>
-
         <div className="mb-3 form-floating row">
-<<<<<<< HEAD
           <form className="signup-form row">
             <div className="mb-3 pl-2  form-floating col-md-6">
               <input
                 type="text"
                 name="username"
-                value={user.username}
+                value={superman.username}
                 onChange={handleChange}
                 className="form-control"
                 id="floatingUsername"
@@ -83,39 +74,19 @@ const [superman, setSuperman] = useState({...user});
               />
               <label htmlFor="floatingFirstName">Username:</label>
             </div>
-              <div>
-                <span>This is the name that will be shown in your messages. Please
+            <div>
+              <span>
+                This is the name that will be shown in your messages. Please
                 protect your privacy! Do not use your own name or a username that
-                you use on other forums or social media.</span>
-              </div>
+                you use on other forums or social media.
+              </span>
+            </div>
             <p>----- or -----</p>
             <button type="button" >Randomly Generate<BsArrowRepeat/></button>
-=======
-        <div className="mb-3 pl-2  form-floating col-md-6">
-          <input
-            type="text"
-            name="username"
-            value={superman.username}
-            onChange={handleChange}
-            className=""
-            id="floatingUsername"
-            placeholder="Username"
-          />
-          <label htmlFor="floatingUsername">Username:</label>
-          <div>
-            <span>This is the name that will be shown in your messages. Please
-            protect your privacy! Do not use your own name or a username that
-            you use on other forums or social media.</span>
-          </div>
-        <p>----- or -----</p>
-
-        <button>Randomly Generate</button>
+          </form>
         </div>
 
-
           <form className="signup-form row" onSubmit={handleSignUp}>
->>>>>>> 666866e7ed9b0abdfe550c41a4c29d175ab36b61
-
             <div className="mb-3 pl-2 form-floating col-md-6">
               <input
                 type="text"
@@ -162,46 +133,46 @@ const [superman, setSuperman] = useState({...user});
           </div>
 
           <div className="mb-3 pl-2 form-floating col-md-6">
-          Date of Birth:
-           <input
-             type="text"
-             ref={monthInput}
-             name="Month"
-             className="form-control"
-             id="floatingMonth"
-             placeholder="Month"
-
+            Date of Birth:
+            <input
+              type="text"
+              ref={monthInput}
+              name="Month"
+              className="form-control"
+              id="floatingMonth"
+              placeholder="Month"
             />
             <label htmlFor="floatingMonth">Month</label>
 
-           <input
-             type="text"
-             ref={dayInput}
-             name="Day"
-             className="form-control"
-             id="floatingDay"
-             placeholder="Day"
+            <input
+              type="text"
+              ref={dayInput}
+              name="Day"
+              className="form-control"
+              id="floatingDay"
+              placeholder="Day"
             />
             <label htmlFor="floatingDay">Day</label>
 
-           <input
-             type="text"
-             ref={yearInput}
-             name="Year"
-             className="form-control"
-             id="floatingYear"
-             placeholder="Year"
+            <input
+              type="text"
+              ref={yearInput}
+              name="Year"
+              className="form-control"
+              id="floatingYear"
+              placeholder="Year"
             />
-           <label htmlFor="floatingYear">Year</label>
+            <label htmlFor="floatingYear">Year</label>
           </div>
 
           <div className="form-group">
-          <input className="form-check-input"
-            type="checkbox"
-          />
-          <span>I confirm, the above username isn't my real name and I don't
-          use it on other forums or social media.
-          </span>
+            <input className="form-check-input"
+              type="checkbox"
+            />
+            <span>
+              I confirm, the above username isn't my real name and I don't
+              use it on other forums or social media.
+            </span>
           </div>
 
           <div>
@@ -228,19 +199,13 @@ const [superman, setSuperman] = useState({...user});
           <button
             type="submit"
             value="Register"
-<<<<<<< HEAD
-            className="btn btn-warning"
             onClick={handleSignUp}
-=======
             className="btn btn-success mb-3"
-
->>>>>>> 666866e7ed9b0abdfe550c41a4c29d175ab36b61
           >
             Sign Up
           </button>
         </div>
       </div>
-    </div>
-  )
 
-};
+  )
+}
