@@ -8,12 +8,13 @@ import Posts from './Posts'
 
 
 
-export default function Home({user, setUser, token, setToken, loggedInUser, setLoggedInUser, posts, setPosts}) {
+export default function Home({user, match, setUser, token, setToken, loggedInUser, setLoggedInUser, posts, setPosts}) {
 
 
 //NEED APIs
   useEffect(() => {
-  		(async () => {
+    if (match.path === '/') {
+      (async () => {
   			try {
   				const response = await fetch('https://noetic-talk.herokuapp.com/api/blogs');
           const data = await response.json();
@@ -22,7 +23,8 @@ export default function Home({user, setUser, token, setToken, loggedInUser, setL
   				console.error(error);
   			}
   		})();
-  	}, []);
+    }
+  	}, []); //wrap in if statement - only try to do this if i'm on home page
 
   return(
     <>

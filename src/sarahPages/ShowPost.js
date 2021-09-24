@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import Comments from '../sarahComponents/Comments';
 import CreateComment from '../sarahComponents/CreateComment';
+import {Link} from 'react-router-dom';
 
-
-export default function ShowPost({user}) {
+export default function ShowPost({user, match, comment, setComment, loggedInUser}) {
   const [post, setPost] = useState({
     title: '',
     username: '',
@@ -11,13 +11,14 @@ export default function ShowPost({user}) {
     createdAt: '',
     comments: ''
   });
-  const [comments, setComments] = useState({});
+  const [comments, setComments] = useState([]);
+  
 
   useEffect(() => {
 		(async () => {
 			try {
 
-				const response = await fetch(`https://noetic-talk.herokuapp.com/api/blogs/${props.match.params.id}`);
+				const response = await fetch(`https://noetic-talk.herokuapp.com/api/blogs/${match.params.id}`);
 				const data = await response.json();
 				setPost(data);
 			} catch (error) {
@@ -26,8 +27,13 @@ export default function ShowPost({user}) {
 		})();
 	}, []);
 
+  useEffect(() => {
+		console.log("UseEffect", loggedInUser)
+	}, [loggedInUser]);
 
-
+  // <Link to="/createcomment">Create Comment</Link>
+  // <Comments user={user}/>
+  // <CreateComment />
 
   return(
     <div className="PostPage container">
@@ -37,8 +43,9 @@ export default function ShowPost({user}) {
             <h4>{post.username}</h4>
             <p>{post.createdAt}</p>
 						<p>{post.body}</p>
-            <Link to="/createcomment">Create Comment</Link>
-            <Comments user={user}/>
+            <CreateComment user={user} match={match} comment={comment} setComment={setComment} loggedInUser={loggedInUser} comments={comments} setComments={setComments}/>
+            <Comments user={user} comments={comments} loggedInUser={loggedInUser} setComments={setComments}/>
+
 					</>
 
 				) : (

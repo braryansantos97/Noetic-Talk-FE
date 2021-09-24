@@ -1,20 +1,10 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 
-export default function Comments({user}){
+export default function Comments({user, comments, loggedInUser}){
 
-  const [comments, setComments] = useState([]);
 
-  useEffect((() => {
-  		(async () => {
-  			try {
-  				const response = await fetch('https://noetic-talk.herokuapp.com/api/comments');
-          const data = await response.json();
-  				setComments(data);
-  			} catch (error) {
-  				console.error(error);
-  			}
-  		})();
-  	}, []);
+
+
 
   return (
     <div>
@@ -25,18 +15,19 @@ export default function Comments({user}){
           <li key={comment._id}>
             <div className="card">
             <div className="card-body">
-                  <p className="card-title">
-                    {comment.body}
+                  <p className="card-message">
+                    {comment.message}
                   </p>
                   <p className="card-author">
-                    {user.username}
+                    {loggedInUser}
                   </p>
+
               </div>
             </div>
           </li>
         )
       })}
       </div>
-    </div>;
+    </div>
   )
 }

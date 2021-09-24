@@ -5,6 +5,7 @@ import Login from '../sarahComponents/Login';
 import Home from '../sarahPages/Home';
 import About from '../sarahPages/About';
 import CreatePost from '../sarahPages/CreatePost';
+import CreateComment from '../sarahComponents/CreateComment';
 // import Chat from '../sarahPages/Chat';
 // import Resources from '../sarahPages/Resources';
 

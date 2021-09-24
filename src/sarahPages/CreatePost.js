@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import {useHistory} from 'react-router-dom';
 
-export default function CreatePost({user, posts, setPosts, match}) {
+export default function CreatePost({user, posts, setPosts, match, loggedInUser}) {
 	const [newPost, setNewPost] = useState({
-		 username: '',
 		 topic: '',
 	   title: '',
      body: '',
@@ -22,12 +21,11 @@ export default function CreatePost({user, posts, setPosts, match}) {
 				headers: {
 					'Content-Type': 'application/json'
 				},
-				body: JSON.stringify(newPost)
+				body: JSON.stringify({...newPost, username: loggedInUser}) // {...newPost, username: loggedInUser}
 			});
 			const data = await response.json();
 			setPosts([...posts, data]);
 			setNewPost({
-				username: '',
         topic: '',
         title: '',
         body: '',
@@ -74,16 +72,7 @@ export default function CreatePost({user, posts, setPosts, match}) {
   						<label htmlFor="floatingTitle">Title</label>
   					</div>
 
-						<div className="mb-3 form-floating">
-  						<input
-  							type="text"
-  							id="author"
-  							defaultValue={user.username}
-  							placeholder="Author"
-								name="floatingAuthor"
-  						/>
-  						<label htmlFor="floatingAuthor">Title</label>
-  					</div>
+
 
   					<div className="mb-3 form-floating">
   						<input
