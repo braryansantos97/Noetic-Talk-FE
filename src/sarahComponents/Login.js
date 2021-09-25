@@ -78,7 +78,7 @@ const history = useHistory();
             </Link>
           </div>
 
-          <div >
+          <div>
             <button  type="submit">
               Log in
             </button>

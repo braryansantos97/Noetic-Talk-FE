@@ -5,13 +5,13 @@ import {context} from './context';
 import {BsArrowRepeat} from "react-icons/bs";
 
 export default function SignUp(props) {
-const {user, setUser, token, setToken, loggedInUser, setLoggedInUser} = useContext(context)
-let history = useHistory();
-const monthInput = useRef(null);
-const dayInput = useRef(null);
-const yearInput = useRef(null);
-const [superman, setSuperman] = useState({...user});
-//before we update, take the value, combine into temp literal, then set DOB to that
+  const {user, setUser, token, setToken, loggedInUser, setLoggedInUser} = useContext(context)
+  let history = useHistory();
+  const monthInput = useRef(null);
+  const dayInput = useRef(null);
+  const yearInput = useRef(null);
+  const [superman, setSuperman] = useState({...user});
+  //before we update, take the value, combine into temp literal, then set DOB to that
 
   useEffect(() => {
 		if (window.localStorage.getItem('token')) {
@@ -63,29 +63,26 @@ const [superman, setSuperman] = useState({...user});
       <div className="form-div form-floating mb-3 container">
         <h1 className="h3 mb-3 fw-normal">Sign Up</h1>
         <div className="mb-3 form-floating row">
-          <form className="signup-form row">
-            <div className="mb-3 pl-2  form-floating col-md-6">
-              <input
-                type="text"
-                name="username"
-                value={superman.username}
-                onChange={handleChange}
-                className="form-control"
-                id="floatingUsername"
-                placeholder="Username"
-              />
-              <label htmlFor="floatingFirstName">Username:</label>
-            </div>
-            <div>
-              <span>
-                This is the name that will be shown in your messages. Please
-                protect your privacy! Do not use your own name or a username that
-                you use on other forums or social media.
-              </span>
-            </div>
+          <div className="mb-3 pl-2  form-floating col-md-6">
+            <input
+              type="text"
+              name="username"
+              value={superman.username}
+              onChange={handleChange}
+              className="form-control"
+              id="floatingUsername"
+              placeholder="Username"
+            />
+            <label htmlFor="floatingFirstName">Username:</label>
+          <div>
+            <span>
+              This is the name that will be shown in your messages. Please
+              protect your privacy! Do not use your own name or a username that
+              you use on other forums or social media.
+            </span>
+          </div>
             <p>----- or -----</p>
             <button type="button" >Randomly Generate<BsArrowRepeat/></button>
-          </form>
         </div>
 
           <form className="signup-form row" onSubmit={handleSignUp}>
@@ -205,6 +202,6 @@ const [superman, setSuperman] = useState({...user});
           </form>
         </div>
       </div>
-  </div>
+    </div>
   )
 }
