@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 import NavBar from '../sarahComponents/NavBar';
 import Login from '../sarahComponents/Login';
 import SignUp from '../sarahComponents/SignUp';
+import Posts from './Posts';
 import CreatePost from './CreatePost'
-import Posts from './Posts'
 import {context} from '../sarahComponents/context';
-
 
 export default function Home({match, ...props}) {
 
@@ -35,6 +34,7 @@ const [subscribe, setSubscribe] = useState(true);
 
   return(
     <>
+    
       <Link to='/createpost'> Create Post </Link>
       <Posts />
     </>

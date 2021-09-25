@@ -2,23 +2,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
 
 .NavBar{
-  display: flex;
+  // height: 200px;
   background-color: #1B428E;
+  
+  a{
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
+    color: white;
+    margin:auto;
+    
+  }
+
+  .nav-link nav-item{
+    justify-content: space-around;
+    
+  }
+  div > button {
+  display: inline-block;
+  align-content: space-between;
+    
+}
 }
 
 .SignUpComponent{
+  border: solid;
+  border-radius: 8px;
+  border-color: #1B428E;
+  width: 90%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+
+  h1{
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Nunito', sans-serif;
+    font-weight:bold;
+    font: #FEC033 !important;
+  }
+  p{
+    text-align: center;
+  }
+  
+  .DoB{
+    display: inline;
+    input[type="text"]{
+      width: 100px;
+    
+    }
+  }
+
   button {
     width: 112px;
     height: 44px;
-    color: white;
+    color:  black;
     border-radius: 5px;
     border: solid 2px ;
     border-color: #FEC033;
     text-align: center;
-
+    margin: auto;
+  
   }
   button:hover{
-    color: #FEC033;
+    background-color: #FEC033;
+    
   }
   div {
     input[type="text"]{
@@ -26,26 +75,92 @@
       border: solid 2px;
       border-color: #FEC033;
     }
+    input[type="password"]{
+      border-radius: 5px;
+      border: solid 2px;
+      border-color: #FEC033;
+    }
+    
   }
   div {
     input[type="checkbox"]{
       border-color: #FEC033;
     }
   }
+
+  
+}
+
+.CreateComponent {
   border: solid;
   border-radius: 8px;
-  text-align: center;
-  h1{
-    font-size: 48px;
-    font-family: 'Nunito', sans-serif;
-    font-weight:bold;
+  border-color: #1B428E;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+
+  button {
+    width: 112px;
+    height: 44px;
+    color:  black;
+    border-radius: 5px;
+    border: solid 2px ;
+    border-color: #FEC033;
+    margin-left: auto;
+    margin-right: auto;
+    
   }
+  div {
+    input[type="text"]{
+      border-radius: 5px;
+      border: solid 2px;
+      border-color: #FEC033;
+    }    
+  }
+  div {
+    input[type="checkbox"]{
+      border-color: #FEC033;
+    }
+  }
+
+}
+
+.posts-container{
+  width: 90%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+
+}
+
+.ShowPost {
+
+}
+
+.PostPage {
+  
+  button {
+    color:  black;
+    border-radius: 5px;
+    border: solid 2px ;
+    border-color: #FEC033;
+    text-align: center;
+    margin: auto;
+  
+  }
+  button:hover{
+    background-color: #FEC033;
+    
+  }
+  
 }
 
 .LoginComponent{
-
+  background-color: pink;
+  
 }
-.CreateComment{}
 
 // @import './sub/sub.scss';
 // @import './sub/';

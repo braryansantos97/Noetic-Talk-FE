@@ -1,33 +1,81 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap");
 .NavBar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   background-color: #1B428E;
+}
+
+.NavBar a {
+  display: inline-block;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 800;
+  color: white;
+  margin: auto;
+}
+
+.NavBar .nav-link nav-item {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.NavBar div > button {
+  display: inline-block;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
 }
 
 .SignUpComponent {
   border: solid;
   border-radius: 8px;
+  border-color: #1B428E;
+  width: 90%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.SignUpComponent h1 {
   text-align: center;
+  font-size: 48px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  font: #FEC033 !important;
+}
+
+.SignUpComponent p {
+  text-align: center;
+}
+
+.SignUpComponent .DoB {
+  display: inline;
+}
+
+.SignUpComponent .DoB input[type="text"] {
+  width: 100px;
 }
 
 .SignUpComponent button {
   width: 112px;
   height: 44px;
-  color: white;
+  color: black;
   border-radius: 5px;
   border: solid 2px;
   border-color: #FEC033;
   text-align: center;
+  margin: auto;
 }
 
 .SignUpComponent button:hover {
-  color: #FEC033;
+  background-color: #FEC033;
 }
 
 .SignUpComponent div input[type="text"] {
+  border-radius: 5px;
+  border: solid 2px;
+  border-color: #FEC033;
+}
+
+.SignUpComponent div input[type="password"] {
   border-radius: 5px;
   border: solid 2px;
   border-color: #FEC033;
@@ -37,9 +85,59 @@
   border-color: #FEC033;
 }
 
-.SignUpComponent h1 {
-  font-size: 48px;
-  font-family: 'Nunito', sans-serif;
-  font-weight: bold;
+.CreateComponent {
+  border: solid;
+  border-radius: 8px;
+  border-color: #1B428E;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.CreateComponent button {
+  width: 112px;
+  height: 44px;
+  color: black;
+  border-radius: 5px;
+  border: solid 2px;
+  border-color: #FEC033;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.CreateComponent div input[type="text"] {
+  border-radius: 5px;
+  border: solid 2px;
+  border-color: #FEC033;
+}
+
+.CreateComponent div input[type="checkbox"] {
+  border-color: #FEC033;
+}
+
+.posts-container {
+  width: 90%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+
+.PostPage button {
+  color: black;
+  border-radius: 5px;
+  border: solid 2px;
+  border-color: #FEC033;
+  text-align: center;
+  margin: auto;
+}
+
+.PostPage button:hover {
+  background-color: #FEC033;
+}
+
+.LoginComponent {
+  background-color: pink;
 }
 /*# sourceMappingURL=styles.css.map */
