@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import NavBar from '../sarahComponents/NavBar';
 import Login from '../sarahComponents/Login';
 import SignUp from '../sarahComponents/SignUp';
-import CreatePost from './CreatePost'
-import Posts from './Posts'
+import CreatePost from './CreatePost';
+import Posts from './Posts';
+
 
 
 
@@ -28,6 +29,7 @@ export default function Home({user, match, setUser, token, setToken, loggedInUse
 
   return(
     <>
+    
       <Link to='/createpost'> Create Post </Link>
       <Posts user={user} posts={posts}/>
     </>

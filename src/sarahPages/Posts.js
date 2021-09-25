@@ -8,8 +8,8 @@ export default function Posts({user, posts, loggedInUser}){
       {posts && posts.map(post => {
         return (
           <li key={post._id}>
-            <div className="card">
-            <div className="card-body">
+            <div >
+            <div >
                   <h3 className="card-topic">{post.topic}</h3>
                   <p className="card-title">
                     {post.title}

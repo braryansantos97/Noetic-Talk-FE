@@ -94,7 +94,7 @@ export default function CreatePost({user, posts, setPosts, match, loggedInUser})
   						<label htmlFor="floatingCheckbox">Sensitive content disclaimer</label>
   					</div>
 
-  					<button className="btn btn-primary mb-3" type="submit">
+  					<button className="btn btn-warning" type="submit">
   						Submit
   					</button>
   				</form>

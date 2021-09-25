@@ -134,7 +134,7 @@ const [superman, setSuperman] = useState({...user});
             </span>
           </div>
 
-          <div className="mb-3 pl-2 form-floating col-md-6">
+          <div className="DoB">
             Date of Birth:
             <input
               type="text"
@@ -198,7 +198,7 @@ const [superman, setSuperman] = useState({...user});
             type="submit"
             value="Register"
             onClick={handleSignUp}
-            className="btn btn-success mb-3"
+            className="btn btn-warning mb-3"
           >
             Sign Up
           </button>

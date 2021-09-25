@@ -25,7 +25,7 @@ const logout = () => {
   return (
     <div className="NavBar">
 			<nav>
-				<div className="collapse navbar-collapse" id="toggleMobileMenu">
+				{/* <div className="collapse navbar-collapse" id="toggleMobileMenu"> */}
 					<NavLink
 						key="Home"
 						to="/"
@@ -71,12 +71,12 @@ const logout = () => {
               </>
             ) : (
               <>
-                <button><Link to="/login">Log in</Link></button>
-                <button><Link to="/signup">Sign up</Link></button>
+                <button type="button" className="btn btn-light"><Link to="/login">Log in</Link></button>
+                <button type="button" className="btn btn-light"><Link to="/signup">Sign up</Link></button>
               </>
             )}
 			    </div>
-        </div>
+        {/* </div> */}
 			</nav>
 		</div>
   )
