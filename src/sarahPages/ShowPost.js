@@ -1,9 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import Comments from '../sarahComponents/Comments';
 import CreateComment from '../sarahComponents/CreateComment';
 import {Link} from 'react-router-dom';
+import {context} from '../sarahComponents/context';
 
-export default function ShowPost({user, match, comment, setComment, loggedInUser}) {
+export default function ShowPost({comment, setComment, ...props}) {
+
+  const {user, loggedInUser, token, setToken, setLoggedInUser} = useContext(context)
   const [post, setPost] = useState({
     title: '',
     username: '',
@@ -12,15 +15,23 @@ export default function ShowPost({user, match, comment, setComment, loggedInUser
     comments: ''
   });
   const [comments, setComments] = useState([]);
-  
+
+  useEffect(() => {
+		if (window.localStorage.getItem('token')) {
+			setToken(window.localStorage.getItem('token'));
+			setLoggedInUser(window.localStorage.getItem('loggedInUser'));
+		}
+	}, []);
+
 
   useEffect(() => {
 		(async () => {
 			try {
 
-				const response = await fetch(`https://noetic-talk.herokuapp.com/api/blogs/${match.params.id}`);
+				const response = await fetch(`https://noetic-talk.herokuapp.com/api/blogs/${props.match.params.id}`);
 				const data = await response.json();
 				setPost(data);
+        setComments(data.comments)
 			} catch (error) {
 				console.error(error);
 			}
@@ -37,19 +48,19 @@ export default function ShowPost({user, match, comment, setComment, loggedInUser
 
   return(
     <div className="PostPage container">
-    {Object.keys(post).length ? (
+    {Object.keys(post).length && token ? (
 					<>
 						<h2>{post.title}</h2>
             <h4>{post.username}</h4>
             <p>{post.createdAt}</p>
 						<p>{post.body}</p>
-            <CreateComment user={user} match={match} comment={comment} setComment={setComment} loggedInUser={loggedInUser} comments={comments} setComments={setComments}/>
-            <Comments user={user} comments={comments} loggedInUser={loggedInUser} setComments={setComments}/>
+            <CreateComment  match={props.match} comment={comment} setComment={setComment} comments={comments} setComments={setComments}/>
+            <Comments  comments={comments} setComments={setComments}/>
 
 					</>
 
 				) : (
-					<h1>Loading ...</h1>
+					<h1>Please login or sign up above</h1>
 				)}
     </div>
   )
