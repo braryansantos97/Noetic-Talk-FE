@@ -1,6 +1,18 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-export default function Posts({user, posts, loggedInUser}){
+import {context} from '../sarahComponents/context';
+
+export default function Posts(props){
+
+  const {user, posts, loggedInUser, setToken, setLoggedInUser} = useContext(context)
+
+  useEffect(() => {
+		if (window.localStorage.getItem('token')) {
+			setToken(window.localStorage.getItem('token'));
+			setLoggedInUser(window.localStorage.getItem('loggedInUser'));
+		}
+	}, []);
+
 
   return(
     <div className="posts-container">

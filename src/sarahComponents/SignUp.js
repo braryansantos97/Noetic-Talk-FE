@@ -1,7 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import  { Link } from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
-export default function SignUp({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
+import {context} from './context';
+
+export default function SignUp(props) {
+
+const {user, setUser, token, setToken, loggedInUser, setLoggedInUser} = useContext(context)
 
 let history = useHistory();
 const monthInput = useRef(null);
@@ -206,7 +210,7 @@ const [superman, setSuperman] = useState({...user});
 
         </div>
       </div>
-  
+
   )
 
 };

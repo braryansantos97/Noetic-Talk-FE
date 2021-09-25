@@ -1,15 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { NavLink } from 'react-router-dom';
 import Login from './Login';
 import SignUp from './SignUp';
 import { Link } from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
+import {context} from './context';
 
-
-export default function NavBar({user, token, setToken, loggedInUser, setLoggedInUser}) {
+export default function NavBar(props) {
   //function - onClick component shows up from buttons
   //reveal function will show the login or register - same as my Registry
-
+const {setToken, token, loggedInUser} = useContext(context);
 
 
 let history = useHistory();
@@ -76,6 +76,7 @@ const logout = () => {
                        <button><Link to="/signup">Sign up</Link></button>
                        </>
                      )}
+
 			  </div>
         </div>
 			</nav>

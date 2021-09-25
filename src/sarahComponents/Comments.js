@@ -1,16 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
+import {context} from './context';
 
-export default function Comments({user, comments, loggedInUser}){
-
-
-
+export default function Comments(props){
+  const {user, loggedInUser} = useContext(context);
 
 
   return (
     <div>
       <h3>Comments</h3>
       <div>
-      {comments && comments.map(comment => {
+      {props.comments && props.comments.map(comment => {
         return (
           <li key={comment._id}>
             <div className="card">
@@ -18,6 +17,7 @@ export default function Comments({user, comments, loggedInUser}){
                   <p className="card-message">
                     {comment.message}
                   </p>
+                  <p>{comment.createdAt}</p>
                   <p className="card-author">
                     {loggedInUser}
                   </p>

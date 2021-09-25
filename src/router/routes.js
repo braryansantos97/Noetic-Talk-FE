@@ -12,11 +12,7 @@ import CreateComment from '../sarahComponents/CreateComment';
 
 const routes = [
 
-	{
-		Component: Home,
-		key: 'Home',
-		path: '/'
-	},
+	
 	{
 		Component: Login,
 		key: 'Login',
