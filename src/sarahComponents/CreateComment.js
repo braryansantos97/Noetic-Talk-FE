@@ -1,14 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import {useHistory} from 'react-router-dom';
+import {context} from './context';
 
-export default function CreateComment({user, comments, setComments, loggedInUser, match}) {
+export default function CreateComment({match, ...props}) {
+
+  const {user, loggedInUser} = useContext(context);
+
   const [newComment, setNewComment] = useState({
     message: '',
   });
-  // const [newComment, setNewComment] = useState({
-  //   name: `${loggedInUser}`,
-  //   message:
-  // })
+
   let history = useHistory();
   console.log(user.params)
   const handleChange = e => {
@@ -29,8 +30,8 @@ export default function CreateComment({user, comments, setComments, loggedInUser
 
 			const data = await response.json();
 
-			setComments([...comments, data]);
-      console.log(comments, "comments")
+			props.setComments([...props.comments, data]);
+      console.log(props.comments, "comments")
 			setNewComment({
 				message: '',
 			});

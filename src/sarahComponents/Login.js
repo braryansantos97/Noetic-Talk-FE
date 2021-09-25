@@ -1,12 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { Link } from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
+import {context} from './context';
 
-export default function Login(
-  {user,
-  setUser, token, setToken,
-  loggedInUser, setLoggedInUser}
-) {
+export default function Login(props) {
+  const {user, setUser, token, setToken,loggedInUser, setLoggedInUser} = useContext(context)
 const [superwoman, setSuperwoman] = useState({...user})
 const history = useHistory();
 
@@ -65,7 +63,7 @@ const history = useHistory();
 
           <div className="form-floating">
             <input
-              type="text"
+              type="password"
               name="password"
               value={superwoman.password}
               onChange={handleChange}

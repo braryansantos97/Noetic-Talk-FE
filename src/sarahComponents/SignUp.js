@@ -1,11 +1,11 @@
-
-import { Link } from 'react-router-dom';
-import {BsArrowRepeat} from "react-icons/bs";
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import  { Link } from 'react-router-dom';
 import {useHistory} from 'react-router-dom';
+import {context} from './context';
+import {BsArrowRepeat} from "react-icons/bs";
 
-export default function SignUp({user, setUser, token, setToken, loggedInUser, setLoggedInUser}) {
-
+export default function SignUp(props) {
+const {user, setUser, token, setToken, loggedInUser, setLoggedInUser} = useContext(context)
 let history = useHistory();
 const monthInput = useRef(null);
 const dayInput = useRef(null);
@@ -204,6 +204,7 @@ const [superman, setSuperman] = useState({...user});
           </button>
           </form>
         </div>
+      </div>
   </div>
   )
 }
