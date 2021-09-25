@@ -25,7 +25,6 @@ const logout = () => {
   return (
     <div className="NavBar">
 			<nav>
-
 				<div className="collapse navbar-collapse" id="toggleMobileMenu">
 					<NavLink
 						key="Home"
@@ -64,23 +63,21 @@ const logout = () => {
 						About
 					</NavLink>
 
-        <div>
+          <div>
 				    {token ? (
               <>
-					         <p>{loggedInUser}</p>
-                   <button onClick={logout}>Log out</button>
+					      <p>{loggedInUser}</p>
+                <button onClick={logout}>Log out</button>
               </>
-				             ) : (
-                       <>
-                       <button><Link to="/login">Log in</Link></button>
-                       <button><Link to="/signup">Sign up</Link></button>
-                       </>
-                     )}
-
-			  </div>
+            ) : (
+              <>
+                <button><Link to="/login">Log in</Link></button>
+                <button><Link to="/signup">Sign up</Link></button>
+              </>
+            )}
+			    </div>
         </div>
 			</nav>
 		</div>
-
   )
 }
