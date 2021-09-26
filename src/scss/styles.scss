@@ -1,28 +1,60 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
 
+*{
+  font-family: 'Nunito', sans-serif;
+  max-width: 1000px;
+  margin: auto;
+}
+
 .NavBar{
-  // height: 200px;
   background-color: #1B428E;
   
-  a{
-    display: inline-block;
+h2{
+  color: #FEC033;
+  margin-left: 20px;
+  font-weight: 800;
+}
+  a {
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
     color: white;
-    margin:auto;
+    display: inline-block;
+    // justify-content:center;
     
-  }
+    }
 
-  .nav-link nav-item{
-    justify-content: space-around;
+  div {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
     
+    a{
+    color:rgb(5, 0, 0);
+    text-decoration: none;
+    font-weight: lighter;
+    }
+    button {
+    border-radius: 5px;
+    border: solid 2px ;
+    border-color: #FEC033;
+    margin: 5px;
+    
+    }
+    p{
+      color:  white;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      margin: 0 0 0 auto;
+      
+      img{
+      border-radius: 5px;
+      border: solid 4px ;
+      }
+    }
   }
-  div > button {
-  display: inline-block;
-  align-content: space-between;
-    
-}
+  
 }
 
 .SignUpComponent{
@@ -30,11 +62,13 @@
   border-radius: 8px;
   border-color: #1B428E;
   width: 90%;
+  height: 95%;
   position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
-
+  margin-bottom: 10p;
+  
   h1{
     text-align: center;
     font-size: 48px;
@@ -45,11 +79,19 @@
   p{
     text-align: center;
   }
+  button[id="random"]{
+    width: 250px;
+    
+    display: block;
+    justify-content:center;
+    text-align: center;
+  }
   
-  .DoB{
-    display: inline;
+  .flex-container{
+    display: inline-box;
     input[type="text"]{
       width: 100px;
+      margin-right: 5px;
     
     }
   }
@@ -127,12 +169,25 @@
 }
 
 .posts-container{
+  border: solid;
+  border-radius: 8px;
+  border-color: #1B428E;
   width: 90%;
+  height: 95%;
   position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
+  margin-bottom: 10p;
+ li{
+   margin-left: 20px;
+   margin-right: 20px;
+   overflow:hidden; 
+   border-bottom:1px solid grey;
+   margin-top:-1px;
+   list-style: none;
 
+ }
 }
 
 .ShowPost {
@@ -140,7 +195,7 @@
 }
 
 .PostPage {
-  
+ 
   button {
     color:  black;
     border-radius: 5px;
@@ -148,19 +203,32 @@
     border-color: #FEC033;
     text-align: center;
     margin: auto;
+    
   
   }
   button:hover{
     background-color: #FEC033;
     
   }
+  h1{
+    text-align: center;
+  }
+}
+.HomeComponent{
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  button{
+    display: block;
+  margin: 0 0 0 auto;
+  border-radius: 5px;
+    border: solid 2px ;
+    border-color: #FEC033;
+    a{
+    color:rgb(5, 0, 0);
+    text-decoration: none;
+    }
+  }
   
 }
 
-.LoginComponent{
-  background-color: pink;
-  
-}
-
-// @import './sub/sub.scss';
-// @import './sub/';

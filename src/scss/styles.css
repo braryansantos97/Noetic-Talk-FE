@@ -1,26 +1,66 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap");
+* {
+  font-family: 'Nunito', sans-serif;
+  max-width: 1000px;
+  margin: auto;
+}
+
 .NavBar {
   background-color: #1B428E;
 }
 
+.NavBar h2 {
+  color: #FEC033;
+  margin-left: 20px;
+  font-weight: 800;
+}
+
 .NavBar a {
-  display: inline-block;
   font-family: 'Nunito', sans-serif;
   font-weight: 800;
   color: white;
-  margin: auto;
-}
-
-.NavBar .nav-link nav-item {
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.NavBar div > button {
   display: inline-block;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
+}
+
+.NavBar div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 20px;
+}
+
+.NavBar div a {
+  color: #050000;
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+.NavBar div button {
+  border-radius: 5px;
+  border: solid 2px;
+  border-color: #FEC033;
+  margin: 5px;
+}
+
+.NavBar div p {
+  color: white;
+  font-size: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 0 0 auto;
+}
+
+.NavBar div p img {
+  border-radius: 5px;
+  border: solid 4px;
 }
 
 .SignUpComponent {
@@ -28,10 +68,12 @@
   border-radius: 8px;
   border-color: #1B428E;
   width: 90%;
+  height: 95%;
   position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
+  margin-bottom: 10p;
 }
 
 .SignUpComponent h1 {
@@ -46,12 +88,22 @@
   text-align: center;
 }
 
-.SignUpComponent .DoB {
-  display: inline;
+.SignUpComponent button[id="random"] {
+  width: 250px;
+  display: block;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
 }
 
-.SignUpComponent .DoB input[type="text"] {
+.SignUpComponent .flex-container {
+  display: inline-box;
+}
+
+.SignUpComponent .flex-container input[type="text"] {
   width: 100px;
+  margin-right: 5px;
 }
 
 .SignUpComponent button {
@@ -117,11 +169,25 @@
 }
 
 .posts-container {
+  border: solid;
+  border-radius: 8px;
+  border-color: #1B428E;
   width: 90%;
+  height: 95%;
   position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
+  margin-bottom: 10p;
+}
+
+.posts-container li {
+  margin-left: 20px;
+  margin-right: 20px;
+  overflow: hidden;
+  border-bottom: 1px solid grey;
+  margin-top: -1px;
+  list-style: none;
 }
 
 .PostPage button {
@@ -137,7 +203,26 @@
   background-color: #FEC033;
 }
 
-.LoginComponent {
-  background-color: pink;
+.PostPage h1 {
+  text-align: center;
+}
+
+.HomeComponent {
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.HomeComponent button {
+  display: block;
+  margin: 0 0 0 auto;
+  border-radius: 5px;
+  border: solid 2px;
+  border-color: #FEC033;
+}
+
+.HomeComponent button a {
+  color: #050000;
+  text-decoration: none;
 }
 /*# sourceMappingURL=styles.css.map */
