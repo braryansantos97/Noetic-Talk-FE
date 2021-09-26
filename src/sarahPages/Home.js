@@ -34,9 +34,12 @@ const [subscribe, setSubscribe] = useState(true);
 
   return(
     <>
-    
-      <Link to='/createpost'> Create Post </Link>
+    <div className="HomeComponent">
+      <h1>Recent Posts</h1>
+    <button type="button" >
+      <Link to='/createpost'> Create New Post +</Link></button></div>
       <Posts />
+
     </>
   )
 }

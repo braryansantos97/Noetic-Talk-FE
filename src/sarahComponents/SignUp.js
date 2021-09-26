@@ -62,8 +62,9 @@ export default function SignUp(props) {
     <div className="SignUpComponent">
       <div className="form-div form-floating mb-3 container">
         <h1 className="h3 mb-3 fw-normal">Sign Up</h1>
-        <div className="mb-3 form-floating row">
-          <div className="mb-3 pl-2  form-floating col-md-6">
+        <div className="form-group">
+          <div >
+          <label htmlFor="floatingFirstName">Username:</label>
             <input
               type="text"
               name="username"
@@ -73,7 +74,7 @@ export default function SignUp(props) {
               id="floatingUsername"
               placeholder="Username"
             />
-            <label htmlFor="floatingFirstName">Username:</label>
+            
           <div>
             <span>
               This is the name that will be shown in your messages. Please
@@ -82,11 +83,12 @@ export default function SignUp(props) {
             </span>
           </div>
             <p>----- or -----</p>
-            <button type="button" >Randomly Generate<BsArrowRepeat/></button>
+            <button type="button" id="random" >Randomly Generate<BsArrowRepeat/></button>
         </div>
 
           <form className="signup-form row" onSubmit={handleSignUp}>
-            <div className="mb-3 pl-2 form-floating col-md-6">
+            <div >
+            <label htmlFor="floatingEmail">Email:</label>
               <input
                 type="text"
                 name="email"
@@ -96,10 +98,11 @@ export default function SignUp(props) {
                 id="floatingEmail"
                 placeholder="Email"
               />
-              <label htmlFor="floatingEmail">Email:</label>
+              
             </div>
 
-            <div className="mb-3 pl-2 form-floating col-md-6">
+            <div >
+            <label htmlFor="floatingEmail">Confirm Email:</label>
               <input
                 type="text"
                 name="email"
@@ -108,10 +111,11 @@ export default function SignUp(props) {
                 className="form-control"
                 placeholder="Email"
               />
-              <label htmlFor="floatingEmail">Confirm Email:</label>
+              
             </div>
 
-            <div className="mb-3 pl-2 form-floating col-md-6">
+            <div >
+            <label htmlFor="floatingPassword">Password</label>
               <input
                 type="password"
                 name="password"
@@ -121,7 +125,7 @@ export default function SignUp(props) {
                 id="floatingPassword"
                 placeholder="Password"
               />
-              <label htmlFor="floatingPassword">Password</label>
+              
             </div>
             <div className="col-auto">
             <span id="passwordGuidelines" className="form-text">
@@ -130,44 +134,45 @@ export default function SignUp(props) {
               symbols.
             </span>
           </div>
-
-          <div className="DoB">
-            Date of Birth:
+          
+          <div className="flex-container">
+          Date of Birth: 
+            <label htmlFor="floatingMonth"></label>
             <input
               type="text"
               ref={monthInput}
               name="Month"
-              className="form-control"
+              className="flex-item"
               id="floatingMonth"
               placeholder="Month"
             />
-            <label htmlFor="floatingMonth">Month</label>
-
+            
+            <label htmlFor="floatingDay"></label>
             <input
               type="text"
               ref={dayInput}
               name="Day"
-              className="form-control"
+              className="flex-item"
               id="floatingDay"
               placeholder="Day"
             />
-            <label htmlFor="floatingDay">Day</label>
-
+            
+            <label htmlFor="floatingYear"></label>
             <input
               type="text"
               ref={yearInput}
               name="Year"
-              className="form-control"
+              className="flex-item"
               id="floatingYear"
               placeholder="Year"
             />
-            <label htmlFor="floatingYear">Year</label>
+            
           </div>
 
           <div className="form-group">
             <input className="form-check-input"
               type="checkbox"
-            />
+            />&nbsp;
             <span>
               I confirm, the above username isn't my real name and I don't
               use it on other forums or social media.
@@ -175,7 +180,8 @@ export default function SignUp(props) {
           </div>
 
           <div>
-            <span>Yellow and Blue make what color?</span>
+            {/* <span>Yellow and Blue make what color?</span> */}
+            <label htmlFor="floatingVerification">Verification:</label>
             <input
               type="text"
               name="Verification"
@@ -184,7 +190,7 @@ export default function SignUp(props) {
               id="floatingVerification"
               placeholder="Verification"
             />
-             <label htmlFor="floatingVerification">Verification:</label>
+             
           </div>
 
           <div>
