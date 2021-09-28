@@ -1,5 +1,4 @@
 import React from 'react';
-import Chatroom from '../jamieComponents/chatroom.js'
 const io = require("socket.io-client");
 const socket = io("https://noetic-talk-socket.herokuapp.com/");
 const messages = this.state.messages;
