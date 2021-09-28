@@ -2,6 +2,7 @@ import React, {useContext, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import {context} from '../sarahComponents/context';
 
+
 export default function Posts(props){
 
   const {user, posts, loggedInUser, setToken, setLoggedInUser} = useContext(context)
@@ -29,8 +30,9 @@ export default function Posts(props){
                   <p className="card-body">
                     {post.body}
                   </p>
+
                   <p className="card-author">
-                    author: {post.username}
+                  <img width="25px" src="/img/01103.jpg" border-radius="30px"></img>author: {post.username}
                   </p>
                   <Link to={`/${post._id}`}>Read full post</Link>
               </div>

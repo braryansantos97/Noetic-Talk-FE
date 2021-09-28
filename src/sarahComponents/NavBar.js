@@ -24,9 +24,10 @@ const logout = () => {
 
   return (
     <div className="NavBar">
+		
 			<nav>
-
-				<div className="collapse navbar-collapse" id="toggleMobileMenu">
+				{/* <div className="collapse navbar-collapse" id="toggleMobileMenu"> */}
+					<h2>Noetic Talk</h2>
 					<NavLink
 						key="Home"
 						to="/"
@@ -64,23 +65,21 @@ const logout = () => {
 						About
 					</NavLink>
 
-        <div>
+          <div>
 				    {token ? (
               <>
-					         <p>{loggedInUser}</p>
-                   <button onClick={logout}>Log out</button>
+					      <p><img width="25px" src="/img/01103.jpg" border-radius="30px"></img>&nbsp;{loggedInUser}</p>
+                <button onClick={logout}>Log out</button>
               </>
-				             ) : (
-                       <>
-                       <button><Link to="/login">Log in</Link></button>
-                       <button><Link to="/signup">Sign up</Link></button>
-                       </>
-                     )}
-
-			  </div>
-        </div>
+            ) : (
+              <>
+                <button type="button" ><Link to="/login">Log in</Link></button>
+                <button type="button" ><Link to="/signup">Sign up</Link></button>
+              </>
+            )}
+			    </div>
+        {/* </div> */}
 			</nav>
 		</div>
-
   )
 }
