@@ -1,18 +1,115 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
 
+*{
+  font-family: 'Nunito', sans-serif;
+  max-width: 1000px;
+  margin: auto;
+}
 
-.SignUpComponent{
-  button {
-    width: 112px;
-    height: 44px;
+.NavBar{
+  background-color: #1B428E;
+  
+h2{
+  color: #FEC033;
+  margin-left: 20px;
+  font-weight: 800;
+}
+  a {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 800;
     color: white;
+    display: inline-block;
+    // justify-content:center;
+    
+    }
+
+  div {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+    
+    a{
+    color:rgb(5, 0, 0);
+    text-decoration: none;
+    font-weight: lighter;
+    }
+    button {
     border-radius: 5px;
     border: solid 2px ;
     border-color: #FEC033;
+    margin: 5px;
+    
+    }
+    p{
+      color:  white;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      margin: 0 0 0 auto;
+      
+      img{
+      border-radius: 5px;
+      border: solid 4px ;
+      }
+    }
+  }
+  
+}
+
+.SignUpComponent{
+  border: solid;
+  border-radius: 8px;
+  border-color: #1B428E;
+  width: 90%;
+  height: 95%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10p;
+  
+  h1{
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Nunito', sans-serif;
+    font-weight:bold;
+    font: #FEC033 !important;
+  }
+  p{
+    text-align: center;
+  }
+  button[id="random"]{
+    width: 250px;
+    
+    display: block;
+    justify-content:center;
+    text-align: center;
+  }
+  
+  .flex-container{
+    display: inline-box;
+    input[type="text"]{
+      width: 100px;
+      margin-right: 5px;
+    
+    }
+  }
+
+  button {
+    width: 112px;
+    height: 44px;
+    color:  black;
+    border-radius: 5px;
+    border: solid 2px ;
+    border-color: #FEC033;
+    text-align: center;
+    margin: auto;
+  
   }
   button:hover{
-    color: #FEC033;
+    background-color: #FEC033;
+    
   }
   div {
     input[type="text"]{
@@ -20,25 +117,118 @@
       border: solid 2px;
       border-color: #FEC033;
     }
+    input[type="password"]{
+      border-radius: 5px;
+      border: solid 2px;
+      border-color: #FEC033;
+    }
+    
   }
   div {
     input[type="checkbox"]{
       border-color: #FEC033;
     }
   }
+
+  
+}
+
+.CreateComponent {
   border: solid;
   border-radius: 8px;
-  text-align: center;
+  border-color: #1B428E;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+
+  button {
+    width: 112px;
+    height: 44px;
+    color:  black;
+    border-radius: 5px;
+    border: solid 2px ;
+    border-color: #FEC033;
+    margin-left: auto;
+    margin-right: auto;
+    
+  }
+  div {
+    input[type="text"]{
+      border-radius: 5px;
+      border: solid 2px;
+      border-color: #FEC033;
+    }    
+  }
+  div {
+    input[type="checkbox"]{
+      border-color: #FEC033;
+    }
+  }
+
+}
+
+.posts-container{
+  border: solid;
+  border-radius: 8px;
+  border-color: #1B428E;
+  width: 90%;
+  height: 95%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10p;
+ li{
+   margin-left: 20px;
+   margin-right: 20px;
+   overflow:hidden; 
+   border-bottom:1px solid grey;
+   margin-top:-1px;
+   list-style: none;
+
+ }
+}
+
+.ShowPost {
+
+}
+
+.PostPage {
+ 
+  button {
+    color:  black;
+    border-radius: 5px;
+    border: solid 2px ;
+    border-color: #FEC033;
+    text-align: center;
+    margin: auto;
+    
+  
+  }
+  button:hover{
+    background-color: #FEC033;
+    
+  }
   h1{
-    font-size: 48px;
-    font-family: 'Nunito', sans-serif;
-    font-weight:bold;
+    text-align: center;
   }
 }
-
-.LoginComponent{
-
+.HomeComponent{
+  margin-top: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  button{
+    display: block;
+  margin: 0 0 0 auto;
+  border-radius: 5px;
+    border: solid 2px ;
+    border-color: #FEC033;
+    a{
+    color:rgb(5, 0, 0);
+    text-decoration: none;
+    }
+  }
+  
 }
-.CreateComment{
 
-}
