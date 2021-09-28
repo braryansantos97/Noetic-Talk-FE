@@ -11,7 +11,7 @@ export default function Comments(props){
       <div>
       {props.comments && props.comments.map(comment => {
         return (
-          <li key={comment._id}>
+          <li key={comment._id} style={{listStyleType: "none"}}>
             <div className="card">
             <div className="card-body">
                   <p className="card-message">

@@ -19,7 +19,7 @@ export default function Posts(props){
 
       {posts && posts.map(post => {
         return (
-          <li key={post._id}>
+          <li key={post._id} style={{listStyleType: "none"}}>
             <div className="card">
             <div className="card-body">
                   <h3 className="card-topic">{post.topic}</h3>
