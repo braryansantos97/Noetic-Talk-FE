@@ -21,7 +21,8 @@ socket.on('receive', message){
     messages.push(message);
   }
 }
-return(
+render(){
+  return(
   <div>
 /*    <div id='roomSelector'>
       <button id='room1'class='roomBtn'>Room 1</button>
@@ -48,5 +49,4 @@ return(
       <button onClick={send}>Send</button>
     </div>
   </div>
-)
-``
+)}
