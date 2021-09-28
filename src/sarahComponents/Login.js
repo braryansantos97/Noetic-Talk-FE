@@ -45,7 +45,7 @@ const history = useHistory();
   return(
     <div className="LoginComponent">
 
-    <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <form onSubmit={handleLogin} >
           <div className="modal-dialog" role="document">
             <h3>Log in</h3>
