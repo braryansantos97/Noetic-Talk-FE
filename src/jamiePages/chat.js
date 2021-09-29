@@ -11,7 +11,6 @@ export default class Chat extends React.Component{
     }
     this.send = this.send.bind(this)
   }
-  
   async send(){
     await socket.emit('send', this.state.message)
   }
