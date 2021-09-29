@@ -1,6 +1,6 @@
 export default function About(){
   return(
-    <>
+    <div className="aboutpage">
     <h2>About Us</h2>
     <p>Noetic Talk is a judgment free peer support website for people who experience
     mental health issues. A safe place where you can share openly and anonymously
@@ -19,6 +19,6 @@ export default function About(){
     <p>Supportive - We strive to create a judgment free website.</p>
     <p>Positive - We do not tolerate cyberbullying!</p>
     
-    </>
+    </div>
   )
 }
