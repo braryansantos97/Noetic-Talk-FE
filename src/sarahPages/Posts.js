@@ -20,9 +20,9 @@ export default function Posts(props){
 
       {posts && posts.map(post => {
         return (
-          <li key={post._id}>
-            <div >
-            <div >
+          <li key={post._id} style={{listStyleType: "none"}}>
+            <div className="card">
+            <div className="card-body">
                   <h3 className="card-topic">{post.topic}</h3>
                   <p className="card-title">
                     {post.title}
@@ -30,7 +30,7 @@ export default function Posts(props){
                   <p className="card-body">
                     {post.body}
                   </p>
-                  
+
                   <p className="card-author">
                   <img width="25px" src="/img/01103.jpg" border-radius="30px"></img>author: {post.username}
                   </p>

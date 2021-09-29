@@ -9,7 +9,7 @@ import Login from '../sarahComponents/Login';
 import CreateComment from '../sarahComponents/CreateComment';
 import SignUp from '../sarahComponents/SignUp';
 import {context} from '../sarahComponents/context';
-
+import About from '../sarahPages/About';
 
 
 const AppRouter = () => {
