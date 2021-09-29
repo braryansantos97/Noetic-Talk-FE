@@ -52,6 +52,7 @@ export default function CreateComment({match, ...props}) {
 				value={newComment.message}
 				onChange={handleChange}
         placeholder="Add a comment"
+		className="form-control"
 			/>
       <button type="submit">
 				+ Add

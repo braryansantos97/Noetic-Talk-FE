@@ -18,7 +18,7 @@ export default function Comments(props){
                     {comment.message}
                   </p>
                   <p>{comment.createdAt}</p>
-                  <p className="card-author">
+                  <p className="card-author"><img  src='/img/01103.jpg' border-radius='30px' width='25px'></img>
                     {loggedInUser}
                   </p>
 
