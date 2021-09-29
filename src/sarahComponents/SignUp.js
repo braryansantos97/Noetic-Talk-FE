@@ -100,7 +100,7 @@ export default function SignUp(props) {
               />
               
             </div>
-
+            
             <div >
             <label htmlFor="floatingEmail">Confirm Email:</label>
               <input
@@ -109,13 +109,15 @@ export default function SignUp(props) {
                 value={superman.email}
                 onChange={handleChange}
                 className="form-control"
-                placeholder="Email"
+                placeholder="Confirm Email"
               />
               
             </div>
+            
+
 
             <div >
-            <label htmlFor="floatingPassword">Password</label>
+            <label htmlFor="floatingPassword">Password:</label>
               <input
                 type="password"
                 name="password"

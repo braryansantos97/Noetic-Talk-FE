@@ -74,7 +74,7 @@ h2{
     font-size: 48px;
     font-family: 'Nunito', sans-serif;
     font-weight:bold;
-    font: #FEC033 !important;
+    color: #FEC033 ;
   }
   p{
     text-align: center;
@@ -228,7 +228,58 @@ h2{
     color:rgb(5, 0, 0);
     text-decoration: none;
     }
-  }
-  
+}
 }
 
+.LoginComponent{
+    border: solid;
+    border-radius: 8px;
+    border-color: #1B428E;
+    width: 90%;
+    height: 95%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display:flex;
+    
+    p{
+      text-align: center;
+    }
+    .col-auto{
+      text-align: center;
+    }
+    div > button {
+      width: 112px;
+      height: 44px;
+      color:  black;
+      border-radius: 5px;
+      border: solid 2px ;
+      border-color: #FEC033;
+      margin-left: 38%;
+      
+    }
+    button:hover{
+      background-color: #FEC033;
+    }
+    
+    h1{
+      font-size: 48px;
+    font-family: 'Nunito', sans-serif;
+    font-weight:bold;
+      color: #FEC033;
+      text-align: center;
+    }
+    .form-control{
+      border-radius: 5px;
+      border: solid 2px;
+      border-color: #FEC033;
+      width: 90%;
+      margin:0 auto;
+    }
+    label{
+      margin-left: 20px;
+    }
+  }
+  

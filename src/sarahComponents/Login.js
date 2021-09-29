@@ -47,21 +47,22 @@ const history = useHistory();
 
       <div className="" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <form onSubmit={handleLogin} >
-          <div className="modal-dialog" role="document">
-            <h3>Log in</h3>
+          <div role="document">
+            <h1>Log in</h1>
+            <label htmlFor="floatingEmail">Email:</label>
             <input
               type="text"
               name="email"
               value={superwoman.email}
               onChange={handleChange}
-              placeholder="username"
+              placeholder="Email"
               id="floatingUsername"
               className="form-control"
             />
-            <label htmlFor="floatingEmail">Email:</label>
+            
           </div>
-
-          <div className="form-floating">
+<label htmlFor="floatingPassword">Password:</label>
+          <div className="form-group">
             <input
               type="password"
               name="password"
@@ -69,8 +70,9 @@ const history = useHistory();
               onChange={handleChange}
               placeholder="Password"
               id="floatingPassword"
+              className="form-control"
             />
-            <label htmlFor="floatingPassword">Password:</label>
+            
           </div>
           <div className="col-auto">
             <Link to="/" >
@@ -79,7 +81,7 @@ const history = useHistory();
           </div>
 
           <div>
-            <button  type="submit">
+            <button  className="btn btn-warning mb-3" type="submit">
               Log in
             </button>
           </div>
