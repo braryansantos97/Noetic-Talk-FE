@@ -81,7 +81,7 @@
   font-size: 48px;
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
-  font: #FEC033 !important;
+  color: #FEC033;
 }
 
 .SignUpComponent p {
@@ -224,5 +224,63 @@
 .HomeComponent button a {
   color: #050000;
   text-decoration: none;
+}
+
+.LoginComponent {
+  border: solid;
+  border-radius: 8px;
+  border-color: #1B428E;
+  width: 90%;
+  height: 95%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.LoginComponent p {
+  text-align: center;
+}
+
+.LoginComponent .col-auto {
+  text-align: center;
+}
+
+.LoginComponent div > button {
+  width: 112px;
+  height: 44px;
+  color: black;
+  border-radius: 5px;
+  border: solid 2px;
+  border-color: #FEC033;
+  margin-left: 38%;
+}
+
+.LoginComponent button:hover {
+  background-color: #FEC033;
+}
+
+.LoginComponent h1 {
+  font-size: 48px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: bold;
+  color: #FEC033;
+  text-align: center;
+}
+
+.LoginComponent .form-control {
+  border-radius: 5px;
+  border: solid 2px;
+  border-color: #FEC033;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.LoginComponent label {
+  margin-left: 20px;
 }
 /*# sourceMappingURL=styles.css.map */
