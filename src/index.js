@@ -4,7 +4,7 @@ import './index.css';
 import './scss/styles.css'
 
 import AppRouter from './router';
-import 'bootstrap/scss/bootstrap.scss';
+// import 'bootstrap/scss/bootstrap.scss';
 
 
 

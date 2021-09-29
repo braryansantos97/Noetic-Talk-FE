@@ -6,13 +6,13 @@ import Home from '../sarahPages/Home';
 import About from '../sarahPages/About';
 import CreatePost from '../sarahPages/CreatePost';
 import CreateComment from '../sarahComponents/CreateComment';
-// import Chat from '../sarahPages/Chat';
+import Chat from '../jamiePages/Chat';
 // import Resources from '../sarahPages/Resources';
 
 
 const routes = [
 
-	
+
 	{
 		Component: Login,
 		key: 'Login',
@@ -37,12 +37,12 @@ const routes = [
 		Component: CreateComment,
 		key: 'CreateComment',
 		path: '/createcomment'
+	},
+	{
+		Component: Chat,
+		key: 'Chat',
+		path: '/chat'
 	}
-	// {
-	// 	Component: Chat,
-	// 	key: 'Chat',
-	// 	path: '/chat'
-	// },
 	// {
 	// 	Component: Resources,
 	// 	key: 'Resources',

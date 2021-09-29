@@ -10,6 +10,7 @@ import CreateComment from '../sarahComponents/CreateComment';
 import SignUp from '../sarahComponents/SignUp';
 import {context} from '../sarahComponents/context';
 import About from '../sarahPages/About';
+import Chat from '../jamiePages/Chat';
 
 
 const AppRouter = () => {
