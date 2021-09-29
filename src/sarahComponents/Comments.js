@@ -21,7 +21,7 @@ export default function Comments(props){
                   </p>
                   <p><GrDocumentTime />{comment.createdAt}</p>
                   <p className="card-author"><img  src='/img/01103.jpg' border-radius='30px' width='25px'></img>
-                    {loggedInUser}
+                    {comment.username}
                   </p>
 
               </div>
