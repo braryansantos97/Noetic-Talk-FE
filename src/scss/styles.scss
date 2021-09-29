@@ -12,15 +12,22 @@
   
 h2{
   color: #FEC033;
-  margin-left: 20px;
+  margin-left: 15px;
   font-weight: 800;
+}
+a[class="nav-link nav-item"]{
+  font-size: 25px;
+}
+a[class="nav-link nav-item activeLink"]{
+  font-size: 25px;
 }
   a {
     font-family: 'Nunito', sans-serif;
     font-weight: 800;
     color: white;
+    font-size: 15px;
     display: inline-block;
-    // justify-content:center;
+    //  justify-content:center;
     
     }
 
@@ -70,11 +77,11 @@ h2{
   margin-bottom: 10p;
   
   h1{
-    text-align: center;
     font-size: 48px;
     font-family: 'Nunito', sans-serif;
     font-weight:bold;
-    color: #FEC033 ;
+      color: #FEC033;
+      text-align: center;
   }
   p{
     text-align: center;
@@ -122,25 +129,28 @@ h2{
       border: solid 2px;
       border-color: #FEC033;
     }
-    
   }
   div {
     input[type="checkbox"]{
       border-color: #FEC033;
     }
   }
-
-  
 }
+
 
 .CreateComponent {
   border: solid;
   border-radius: 8px;
   border-color: #1B428E;
   width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;
   margin-top: 20px;
+  
+  #exampleFormControlTextarea1{
+    border-radius: 5px;
+    border: solid 2px ;
+    border-color: #FEC033;
+  }
 
   button {
     width: 112px;
@@ -149,23 +159,31 @@ h2{
     border-radius: 5px;
     border: solid 2px ;
     border-color: #FEC033;
-    margin-left: auto;
+    margin-left: 44%;
     margin-right: auto;
     
   }
   div {
+    margin-bottom: 20px;
     input[type="text"]{
       border-radius: 5px;
       border: solid 2px;
       border-color: #FEC033;
-    }    
-  }
-  div {
-    input[type="checkbox"]{
-      border-color: #FEC033;
-    }
-  }
+      margin-top: 20px;
 
+    }    
+    input[type="checkbox"]{
+    border-color:  #FEC033;
+    
+    
+  }
+  label{
+    display: flex;
+    align-items: center;
+    
+  }
+  }
+  
 }
 
 .posts-container{
@@ -174,29 +192,31 @@ h2{
   border-color: #1B428E;
   width: 90%;
   height: 95%;
-  position: relative;
+  // position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
   margin-bottom: 10p;
  li{
-   margin-left: 20px;
-   margin-right: 20px;
    overflow:hidden; 
    border-bottom:1px solid grey;
-   margin-top:-1px;
    list-style: none;
-
+   
  }
- 
+div {
+  margin-left: 10px;
+  border: 0px none;
+}
 }
 
-.ShowPost {
-
-}
 
 .PostPage {
- 
+  border: solid;
+  border-radius: 8px;
+  border-color: #1B428E;
+  width: 90%;
+  display: block;
+  margin-top: 20px;
   button {
     color:  black;
     border-radius: 5px;
@@ -204,8 +224,6 @@ h2{
     border-color: #FEC033;
     text-align: center;
     margin: auto;
-    
-  
   }
   button:hover{
     background-color: #FEC033;
@@ -214,7 +232,24 @@ h2{
   h1{
     text-align: center;
   }
+  div {
+    margin-left: 10px;
+    margin-right: 10px;
+    
+  }
+  .form-control{
+    
+    margin:0 auto;
+  }
+  button{
+    display: block;
+  margin: 0 0 0 auto;
+  border-radius: 5px;
+    border: solid 2px ;
+    border-color: #FEC033;
+  }
 }
+
 .HomeComponent{
   margin-top: 10px;
   margin-right: 20px;
@@ -284,3 +319,22 @@ h2{
     }
   }
   
+.aboutpage{
+  border: solid;
+    border-radius: 8px;
+    border-color: #1B428E;
+    width: 90%;
+    height: 95%;
+    margin-top: 20px;
+    
+    
+    p{
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+    h2{
+      text-align: center;
+      font-weight: 800;
+    }
+
+}

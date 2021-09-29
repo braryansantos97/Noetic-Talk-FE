@@ -1,6 +1,8 @@
 import React, {useContext, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import {context} from '../sarahComponents/context';
+import { MdInsertComment } from 'react-icons/md';
+import { GrDocumentTime } from 'react-icons/gr';
 
 
 export default function Posts(props){
@@ -25,10 +27,10 @@ export default function Posts(props){
             <div className="card-body">
                   <h3 className="card-topic">{post.topic}</h3>
                   <p className="card-title">
-                    {post.title}
+                  {post.title}
                   </p>
-                  <p className="card-body">
-                    {post.body}
+                  <p className="card-body">{post.body}
+                    
                   </p>
 
                   <p className="card-author">

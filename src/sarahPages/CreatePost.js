@@ -58,8 +58,11 @@ export default function CreatePost(props) {
 
   			<div>
            <div>
+
           {token ? (
+			  
   				<form onSubmit={handleSubmit} className="create-form">
+					  <h1>New Post</h1>
           	<div className="mb-3 form-floating">
             	<input
 	              type="text"
@@ -102,8 +105,8 @@ export default function CreatePost(props) {
   						<input
   							type="checkbox"
   							id="sensitiveContentWarning"
-  						/>
-  						<label htmlFor="floatingCheckbox">Sensitive content disclaimer</label>
+  						/>Sensitive content disclaime
+  						{/* <label htmlFor="floatingCheckbox">Sensitive content disclaimer</label> */}
   					</div>
 
   					<button className="btn btn-warning" type="submit">

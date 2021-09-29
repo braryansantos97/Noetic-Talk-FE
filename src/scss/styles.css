@@ -12,14 +12,23 @@
 
 .NavBar h2 {
   color: #FEC033;
-  margin-left: 20px;
+  margin-left: 15px;
   font-weight: 800;
+}
+
+.NavBar a[class="nav-link nav-item"] {
+  font-size: 25px;
+}
+
+.NavBar a[class="nav-link nav-item activeLink"] {
+  font-size: 25px;
 }
 
 .NavBar a {
   font-family: 'Nunito', sans-serif;
   font-weight: 800;
   color: white;
+  font-size: 15px;
   display: inline-block;
 }
 
@@ -77,11 +86,11 @@
 }
 
 .SignUpComponent h1 {
-  text-align: center;
   font-size: 48px;
   font-family: 'Nunito', sans-serif;
   font-weight: bold;
   color: #FEC033;
+  text-align: center;
 }
 
 .SignUpComponent p {
@@ -142,9 +151,14 @@
   border-radius: 8px;
   border-color: #1B428E;
   width: 90%;
-  margin-left: auto;
-  margin-right: auto;
+  display: block;
   margin-top: 20px;
+}
+
+.CreateComponent #exampleFormControlTextarea1 {
+  border-radius: 5px;
+  border: solid 2px;
+  border-color: #FEC033;
 }
 
 .CreateComponent button {
@@ -154,18 +168,32 @@
   border-radius: 5px;
   border: solid 2px;
   border-color: #FEC033;
-  margin-left: auto;
+  margin-left: 44%;
   margin-right: auto;
+}
+
+.CreateComponent div {
+  margin-bottom: 20px;
 }
 
 .CreateComponent div input[type="text"] {
   border-radius: 5px;
   border: solid 2px;
   border-color: #FEC033;
+  margin-top: 20px;
 }
 
 .CreateComponent div input[type="checkbox"] {
   border-color: #FEC033;
+}
+
+.CreateComponent div label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .posts-container {
@@ -174,7 +202,6 @@
   border-color: #1B428E;
   width: 90%;
   height: 95%;
-  position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;
@@ -182,12 +209,23 @@
 }
 
 .posts-container li {
-  margin-left: 20px;
-  margin-right: 20px;
   overflow: hidden;
   border-bottom: 1px solid grey;
-  margin-top: -1px;
   list-style: none;
+}
+
+.posts-container div {
+  margin-left: 10px;
+  border: 0px none;
+}
+
+.PostPage {
+  border: solid;
+  border-radius: 8px;
+  border-color: #1B428E;
+  width: 90%;
+  display: block;
+  margin-top: 20px;
 }
 
 .PostPage button {
@@ -205,6 +243,23 @@
 
 .PostPage h1 {
   text-align: center;
+}
+
+.PostPage div {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.PostPage .form-control {
+  margin: 0 auto;
+}
+
+.PostPage button {
+  display: block;
+  margin: 0 0 0 auto;
+  border-radius: 5px;
+  border: solid 2px;
+  border-color: #FEC033;
 }
 
 .HomeComponent {
@@ -282,5 +337,24 @@
 
 .LoginComponent label {
   margin-left: 20px;
+}
+
+.aboutpage {
+  border: solid;
+  border-radius: 8px;
+  border-color: #1B428E;
+  width: 90%;
+  height: 95%;
+  margin-top: 20px;
+}
+
+.aboutpage p {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.aboutpage h2 {
+  text-align: center;
+  font-weight: 800;
 }
 /*# sourceMappingURL=styles.css.map */
