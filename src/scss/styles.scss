@@ -254,17 +254,18 @@ div {
   margin-top: 10px;
   margin-right: 20px;
   margin-left: 20px;
+  margin-bottom: 10px;
   button{
     display: block;
-  margin: 0 0 0 auto;
-  border-radius: 5px;
+    margin: 0 0 10px auto;
+    border-radius: 5px;
     border: solid 2px ;
     border-color: #FEC033;
     a{
     color:rgb(5, 0, 0);
     text-decoration: none;
     }
-}
+  }
 }
 
 .LoginComponent{
@@ -338,3 +339,71 @@ div {
     }
 
 }
+
+.ChatComponent{
+  width: 90%;
+  height: 95%;
+  margin-top: 20px;
+
+  button[id="sendbtn"]{
+        display: block;
+        margin: 0 0 10px auto;
+        border-radius: 5px;
+        border: solid 2px ;
+        border-color: #FEC033;
+        a{
+        color:rgb(5, 0, 0);
+        text-decoration: none;
+        }
+  }
+  .roomselector{
+  }
+  .roomBtn{
+    align-items: stretch;
+    width:250px;
+    height: 180px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: white;
+    border-radius: 8px;
+    border-color: #1B428E;
+    border-width: thick;
+    font-size: 20px;
+    }
+}
+  
+  
+  
+//   .roomSelector{
+
+
+//   }
+//   .roomBtn{
+//     // width:250px;
+//     // height: 180px;
+//     background-color: white;
+//     border-radius: 8px;
+//     border-color: #1B428E;
+//     border-width: thick;
+//     font-size: 20px;
+//   }
+// }
+// .ChatHeader{
+//   margin-top: 10px;
+//   margin-right: 20px;
+//   margin-left: 20px;
+//   margin-bottom: 10px;
+//   button{
+//     display: block;
+//     margin: 0 0 10px auto;
+//     border-radius: 5px;
+//     border: solid 2px ;
+//     border-color: #FEC033;
+//     a{
+//     color:rgb(5, 0, 0);
+//     text-decoration: none;
+//     }
+//   }
+// }
