@@ -50,14 +50,17 @@ export default class Chat extends React.Component{
     // }
   render(){
     return(
-    <div className="ChatComponent">
+    <div className="ChatHeader">
+      <h1>Community Chats</h1>
+      <h3>Select chat room</h3>
+      <div className="ChatComponent">
       <div id='roomSelector'>
-        <button id='room1'className='roomBtn'>Room 1</button>
-        <button id='room2'className='roomBtn'>Room 2</button>
-        <button id='room3'className='roomBtn'>Room 3</button>
-        <button id='room4'className='roomBtn'>Room 4</button>
-        <button id='room5'className='roomBtn'>Room 5</button>
-        <button id='room6'className='roomBtn'>Room 6</button>
+        <button id='room1'className='roomBtn'>General</button>
+        <button id='room2'className='roomBtn'>Anxiety</button>
+        <button id='room3'className='roomBtn'>Motivation</button>
+        <button id='room4'className='roomBtn'>OCD</button>
+        <button id='room5'className='roomBtn'>Stress</button>
+        <button id='room6'className='roomBtn'>More</button>
       </div>
       <div id='messagebox'>
         <div id='message1' className='message'>{this.state.messages[0]}</div>
@@ -72,10 +75,13 @@ export default class Chat extends React.Component{
         <div id='message10' className='message'>{this.state.messages[9]}</div>
       </div>
       <div className='textInput'>
-        <input value={this.state.message} onChange={e => {
+        <input className="form-control" value={this.state.message} onChange={e => {
           this.setState({message:e.target.value})
-        }}/>
-        <button onClick={(e) => this.send()}>Send</button>
+        }}
+        placeholder="Send message"
+        />
+        <button id='sendbtn' onClick={(e) => this.send()}>Send</button>
+      </div>
       </div>
     </div>
   )}
